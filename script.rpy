@@ -30,8 +30,22 @@ label intro:
     "Then, the Masquerade party,{w=0.25} I'd say that was the most memorable party ever!"
     "I met some very interesting ghouls that day.{p=0.25}Everyone was dressed so nicely,{w=0.25}  I honestly haven't felt so ecstatic in a while..."
 
+    jump city_walk
+
+
+# the formal name for this label is intro.city_walk
+# see https://www.renpy.org/doc/html/label.html#label-statement
+label .city_walk:
     scene bg city_debug with fade
 
-    show boo walk with dissolve
-    "test"
+    show boo normal with dissolve
+    b "I think this is the right area…{p=0.25}Where did the invitation say it was again?"
+    
+    show boo worry with dissolve
+    b "..."
+    b "H-Huh!?!"
+    
+    "MINIGAME GOES HERE"
+
+
     return
