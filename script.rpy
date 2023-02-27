@@ -30,7 +30,7 @@ label intro:
     "Then, the Masquerade party,{w=0.25} I'd say that was the most memorable party ever!"
     "I met some very interesting ghouls that day.{p=0.25}Everyone was dressed so nicely,{w=0.25}  I honestly haven't felt so ecstatic in a while..."
 
-    jump city_walk
+    jump .city_walk
 
 
 # the formal name for this label is intro.city_walk
