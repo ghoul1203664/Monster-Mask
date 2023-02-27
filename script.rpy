@@ -34,4 +34,4 @@ label intro:
 
     show boo walk with dissolve
     "test"
-
+    return
