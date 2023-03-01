@@ -10,18 +10,47 @@ define e = Character("Eileen")
 
 label start:
 
-
-
     scene bg room
     show boo normal at center:
+        # we need this line to display boo at the correct size
+        # since they're much larger than the game window
         xysize(560, 880)
 
     b "testing normal"
 
-    b "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    b "Quia dignissimos qui quo sequi sint aut debitis perspiciatis. Quia et minus quidem eum repellat provident delectus sint. Aut et sit maxime.."
 
-    "TESTING 2"
+    "Boo does not talk while we say this..."
 
+    b "But I {i}DO{/i} talk when I say this!{p=0.25}Isn't that cool??"
+
+    call .expression_test
+
+    return
+
+
+label .expression_test:
+
+    menu:
+        b "which expression should I test while talking?"
+
+        "normal":
+            b normal "Ok."
+        "happy":
+            b happy "Ok!"
+        "worried":
+            b worried"Ok..."
+
+    b "Quia dignissimos qui quo sequi sint aut debitis perspiciatis. Quia et minus quidem eum repellat provident delectus sint. Aut et sit maxime.."
+
+    menu:
+        "see another expression?"
+        "yes":
+            jump .expression_test
+        "no":
+            pass
+    
+    "thanks for testing expressions!"
 
     return
 
