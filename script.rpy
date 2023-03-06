@@ -10,24 +10,48 @@ define e = Character("Eileen")
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
     scene bg room
+    show boo normal at center:
+        # we need this line to display boo at the correct size
+        # since they're much larger than the game window
+        xysize(560, 880)
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    b "testing normal"
 
-    show eileen happy
+    b "Quia dignissimos qui quo sequi sint aut debitis perspiciatis. Quia et minus quidem eum repellat provident delectus sint. Aut et sit maxime.."
 
-    # These display lines of dialogue.
+    "Boo does not talk while we say this..."
 
-    e "You've created a new Ren'Py game."
+    b "But I {i}DO{/i} talk when I say this!{p=0.25}Isn't that cool??"
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
+    call .expression_test
 
     return
+
+
+label .expression_test:
+
+    menu:
+        b "which expression should I test while talking?"
+
+        "normal":
+            b normal "Ok."
+        "happy":
+            b happy "Ok!"
+        "worried":
+            b worried"Ok..."
+
+    b "Quia dignissimos qui quo sequi sint aut debitis perspiciatis. Quia et minus quidem eum repellat provident delectus sint. Aut et sit maxime.."
+
+    menu:
+        "see another expression?"
+        "yes":
+            jump .expression_test
+        "no":
+            pass
+    
+    "thanks for testing expressions!"
+
+    return
+
+
