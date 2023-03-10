@@ -5,7 +5,7 @@
 # just having it jump in case we want to seperate the labels
 # into different files later
 label start:
-    jump intro
+    jump intro.city_walk
 
 
 label intro:
@@ -34,11 +34,12 @@ label .city_walk:
     scene bg city_debug with fade
 
     show boo normal at center with easeinright: # custom transition instead of easeinright might be nice
-        # from a 1400x2200 image, we get these numbers
         # we used the base image size * 0.4 for display in game
         # consider 560x880 the unaltered size for squash and stretch
-        xysize (560, 880)
-        align (0.5, 1.0)
+        # PLEASE not that ANY floats in those paranthesis will cause renpy to
+        # think we mean a percentage of the screen! Causes LOTS of graphical weirdness
+        xysize ((1400*4/10), (2200*4/10))
+        anchor (0.5, 1.0)
     b "I think this is the right area…{p=0.25}Where did the invitation say it was again?"
     
     show boo:
@@ -49,8 +50,8 @@ label .city_walk:
     b "..."
 
     show boo worried:
-        ease 0.1 xysize (520, 950)
-        ease 0.1 xysize (560, 880)
+        ease 0.1 xysize ((1400*3/10), (2200*5/10))
+        ease 0.1 xysize ((1400*4/10), (2200*4/10))
         
     b "H-{w=0.25}Huh!?!"
     b "Which way was I supposed to go!?"
@@ -58,12 +59,19 @@ label .city_walk:
     "MINIGAME GOES HERE"
 
     b happy "That wasn't so bad!"
-    
-    jump .reception
+
+    jump reception
 
 
-label .reception:
+label reception:
+    scene bg reception_debug with fade
 
+    show boo normal with easeinright:
+        xysize ((1400*4/10), (2200*4/10))
+        anchor (0.5, 1.0)
+        pos(0.75, 0.95)
+
+    b "Phew!{w=0.25} Made it!"
 
     return
 
