@@ -73,6 +73,12 @@ label reception:
 
     b "Phew!{w=0.25} Made it!"
 
+    b "Now, where should I go next?" # this line is supposed to cue the player to click on something, can be changed
+    
+    show boo at fall_offscreen
+
+    ""
+
     return
 
 

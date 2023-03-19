@@ -1,4 +1,14 @@
 
+# Custom Transforms
+# one for when characters go offscreen vertically
+transform fall_offscreen:
+    parallel:
+        ease 0.3 yalign 1.0
+    parallel:
+        ease 0.3 yanchor 0.0
+
+
+
 # Character definition for Player (Boo)
 
 init -1 python:
