@@ -5,7 +5,7 @@
 # just having it jump in case we want to seperate the labels
 # into different files later
 label start:
-    jump intro.city_walk
+    jump reception
 
 
 label intro:
@@ -63,8 +63,63 @@ label .city_walk:
     jump reception
 
 
+# screen for reception point and click, as well as it's different states
+image pnc_reception_mummy_hover:
+    "pnc/pnc_reception_mummy.png"
+    zoom 1.1
+    matrixcolor TintMatrix("DDDDDDFF")
+
+image pnc_reception_painting_hover:
+    "pnc/pnc_reception_painting.png"
+    zoom 1.1
+    matrixcolor TintMatrix("DDDDDDFF")
+
+image pnc_reception_door_hover:
+    "pnc/pnc_reception_door.png"
+    zoom 1.1
+    matrixcolor TintMatrix("DDDDDDFF")
+
+screen reception_point_n_click_mummy:
+    imagebutton:
+        xanchor 0.5
+        yanchor 1.0
+        xpos 574
+        ypos 813
+        action Jump("reception")
+        idle "pnc/pnc_reception_mummy.png"
+        hover "pnc_reception_mummy_hover"
+        focus_mask True
+screen reception_point_n_click_painting:
+    imagebutton:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 259 + 639 / 2 # adjusted based on image width
+        ypos 57 + 413 / 2
+        action Jump("reception.inspecting_painting")
+        idle "pnc/pnc_reception_painting.png"
+        hover "pnc_reception_painting_hover"
+        focus_mask True
+screen reception_point_n_click_door:
+    imagebutton:
+        xanchor 0.5
+        yanchor 1.0
+        xpos 1248 + 517 / 2 # adjusted based on image width
+        ypos 234 + 519
+        action Jump("reception.inspecting_door")
+        idle "pnc/pnc_reception_door.png"
+        hover "pnc_reception_door_hover"
+        focus_mask True
+screen reception_point_n_click:
+    use reception_point_n_click_painting
+    use reception_point_n_click_mummy
+    use reception_point_n_click_door
+
+define checked_in = False
+
 label reception:
-    scene bg reception_debug with fade
+    scene bg reception_debug with fade:
+        blur 15
+        matrixcolor TintMatrix("#808080ff")
 
     show boo normal with easeinright:
         xysize ((1400*4/10), (2200*4/10))
@@ -75,10 +130,22 @@ label reception:
 
     b "Now, where should I go next?" # this line is supposed to cue the player to click on something, can be changed
     
+    # make boo dissapear
     show boo at fall_offscreen
+    show bg reception_debug with dissolve:
+        blur 0
+        matrixcolor TintMatrix("#ffffffff")
 
-    ""
+label .inspect:
+    call screen reception_point_n_click with dissolve
 
-    return
+label .inspecting_painting:
+    b "Ooh!{w=0.25} That's a nice painting!"
+    jump .inspect
 
-
+label .inspecting_door:
+    if checked_in:
+        "time to go in!"
+    else:
+        "Oops!{w=0.25} I have to check in first!"
+        jump .inspect
