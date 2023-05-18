@@ -114,7 +114,7 @@ screen reception_point_n_click:
     use reception_point_n_click_mummy
     use reception_point_n_click_door
 
-define checked_in = False
+default checked_in = False
 
 label reception:
     scene bg reception_debug with fade:
@@ -145,12 +145,17 @@ label .inspecting_painting:
 
 label .inspecting_door:
     if checked_in:
-        "time to go in!"
+        b "time to go in!"
+        jump .inspect # TODO: Make this take you to the next scene
     else:
-        "Oops!{w=0.25} I have to check in first!"
+        b "Oops!{w=0.25} I have to check in first!"
         jump .inspect
 
 label .checking_in:
+    if checked_in:
+        b "I've already checked in."
+        jump .inspect
+
     show boo normal with easeinright:
         xysize ((1400*4/10), (2200*4/10))
         anchor (0.5, 1.0)
@@ -162,3 +167,24 @@ label .checking_in:
 
     b "Hello,{w=0.25}  I’m Boo and...{w=0.25} I’m here for the party?"
     mum "Let’s see here.."
+    mum happy "Ah!{w=0.25} Yes, I see your name,{w=0.25} and may I see your invitation?"
+    b "Sure thing!"
+    "Boo hands the invitation to The Host."
+
+
+    "RENAME SECTION GOES HERE"
+
+    mum "Everything checks out!{w=0.25} The entrance is the door to your right.{w=0.25} Have fun!"
+    b "Thank you!"
+    mum "Oh!{w=0.25} One more thing.{w=0.25} Take this."
+
+    "CHEST KIT TUTORIAL GOES HERE."
+
+    $ checked_in = True    
+    # make boo dissapear
+    show boo at fall_offscreen
+    show mummy at fall_offscreen
+    show bg reception_debug with dissolve:
+        blur 0
+        matrixcolor TintMatrix("#ffffffff")
+    jump .inspect

@@ -83,4 +83,4 @@ image mummy sad talking:
 
     repeat
 
-define mum = Character("Mummy", callback=mummy_lip_flap, image="mummy")
+define mum = Character("Host", callback=mummy_lip_flap, image="mummy")
