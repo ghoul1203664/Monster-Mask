@@ -85,7 +85,7 @@ screen reception_point_n_click_mummy:
         yanchor 1.0
         xpos 574
         ypos 813
-        action Jump("reception")
+        action Jump("reception.checking_in")
         idle "pnc/pnc_reception_mummy.png"
         hover "pnc_reception_mummy_hover"
         focus_mask True
@@ -149,3 +149,16 @@ label .inspecting_door:
     else:
         "Oops!{w=0.25} I have to check in first!"
         jump .inspect
+
+label .checking_in:
+    show boo normal with easeinright:
+        xysize ((1400*4/10), (2200*4/10))
+        anchor (0.5, 1.0)
+        pos(0.75, 0.95)
+    show mummy normal with easeinleft:
+        xysize ((1400*4/10), (2200*4/10))
+        anchor (0.5, 1.0)
+        pos(0.25, 0.95)
+
+    b "Hello,{w=0.25}  I’m Boo and...{w=0.25} I’m here for the party?"
+    mum "Let’s see here.."

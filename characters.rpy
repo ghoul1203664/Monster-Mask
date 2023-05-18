@@ -1,4 +1,3 @@
-
 # Custom Transforms
 # one for when characters go offscreen vertically
 transform fall_offscreen:
@@ -10,16 +9,15 @@ transform fall_offscreen:
 
 
 # Character definition for Player (Boo)
-
 init -1 python:
     # want to see if I can make this more generic later on
     def lip_flap(char_name, event, **kwargs):
         # turn off if we're done speaking
         if event == "show":
-            renpy.show("boo talking")
+            renpy.show("%s talking" % char_name)
         # show the animated image
         elif event == "slow_done":
-            renpy.show("boo -talking")
+            renpy.show("%s -talking" % char_name)
             renpy.restart_interaction()
         
     # Used to make boo speak
@@ -53,3 +51,36 @@ image boo worried talking:
     repeat
 
 define b = Character("Boo", callback=boo_lip_flap, image="boo")
+
+
+# mummy definition
+init -1 python:
+    # Used to make boo speak
+    def mummy_lip_flap(event, **kwargs):
+        lip_flap("mummy", event, **kwargs)
+
+image mummy normal talking:
+    "mummy normal"
+    pause 0.1
+    "mummy normal talk"
+    pause 0.1
+
+    repeat
+
+image mummy happy talking:
+    "mummy happy"
+    pause 0.1
+    "mummy happy talk"
+    pause 0.1
+
+    repeat
+
+image mummy sad talking:
+    "mummy worried"
+    pause 0.1
+    "mummy worried talk"
+    pause 0.1
+
+    repeat
+
+define mum = Character("Mummy", callback=mummy_lip_flap, image="mummy")
