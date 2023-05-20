@@ -50,8 +50,10 @@ image boo worried talking:
 
     repeat
 
-define b = Character("Boo", callback=boo_lip_flap, image="boo")
 
+
+default player_name = "Boo"
+define b = Character("[player_name]", callback=boo_lip_flap, image="boo")
 
 # mummy definition
 init -1 python:

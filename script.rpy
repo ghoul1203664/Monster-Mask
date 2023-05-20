@@ -171,9 +171,77 @@ label .checking_in:
     b "Sure thing!"
     "Boo hands the invitation to The Host."
 
+label .rename:
 
-    "RENAME SECTION GOES HERE"
+    mum normal "And did you want to change your name for the night?"
 
+    menu:
+        "Yes":
+            jump .rename_input            
+        "No":
+            mum "Very well then!"
+    
+    jump .rename_finished
+
+label .rename_input:
+    python:
+        player_name = renpy.input("(Enter your name)")
+        player_name = player_name.strip()
+
+        if not player_name:
+            player_name = "Boo"
+
+    default invalid_name = False
+
+    if player_name.lower() == "heart":
+        mum "Someone already has that name!"
+        $ invalid_name = True
+    elif player_name.lower() == "tulip":
+        mum "Someone already has that name!{w=0.25} She has such a pretty dress…"
+        $ invalid_name = True
+    elif player_name.lower() == "spaghetti":
+        mum "Someone already has that name!{w=0.25} Kind of an odd name if you ask me…"
+        $ invalid_name = True
+    elif player_name.lower() == "cheddar":
+        mum "I'm afraid that name is already taken by our Goblin Chef."
+        $ invalid_name = True
+    elif player_name.lower() == "rind":
+        mum "Can’t take one of the performer’s names!"
+        $ invalid_name = True
+    elif player_name.lower() == "marrow":
+        mum "That’s one of the performers!{w=0.25} He’s not here yet{w=0.25} but, did RSVP it so we can’t have you take it. "
+        $ invalid_name = True
+    elif player_name.lower() == "t-bone" or player_name.lower() == "t bone " or player_name.lower() == "tbone":
+        mum "Can’t take one of the performer’s names!"
+        $ invalid_name = True
+    elif player_name.lower() == "daisy" or player_name.lower() == "daisy bell":
+        mum "She’s one of the performers. {w=0.25}Oh {0.25}I’m such a big fan!"
+        $ invalid_name = True
+    elif player_name.lower() == "fresca":
+        mum "Someone already has that name!"
+        $ invalid_name = True
+    elif player_name.lower() == "lupin":
+        mum "I wonder if he’s seen the anime…"
+        $ invalid_name = True
+
+
+
+    if invalid_name:
+        jump .rename_input
+
+
+    "You'd prefer [player_name] tonight then?"
+
+    menu:
+        "Yes":
+            if player_name.lower() == "boo":
+                "Sticking with the classic I see~"
+            jump .rename_finished
+        "No":
+            jump .rename_input
+
+
+label .rename_finished:
     mum "Everything checks out!{w=0.25} The entrance is the door to your right.{w=0.25} Have fun!"
     b "Thank you!"
     mum "Oh!{w=0.25} One more thing.{w=0.25} Take this."
