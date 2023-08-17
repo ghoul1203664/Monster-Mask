@@ -5,7 +5,7 @@
 # just having it jump in case we want to seperate the labels
 # into different files later
 label start:
-    jump reception
+    jump intro
 
 
 label intro:
@@ -192,6 +192,7 @@ label .rename_input:
             player_name = "Boo"
 
     default invalid_name = False
+    $ invalid_name = False
 
     if player_name.lower() == "heart":
         mum "Someone already has that name!"
