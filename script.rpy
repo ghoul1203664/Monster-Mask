@@ -10,20 +10,18 @@ label start:
 
 label intro:
     show cg one with dissolve
-    "SpookyWeen | ENTRY:{w=0.25} 11/4/20XX"
+    #Note to self: Show ghosts and ghouls dancing in the city 
+    "It is said that once a year, on Halloween night"
+    "Creatures of all kinds attend the Monster Masquerade in the heart of the living city"
 
     show cg two with dissolve
-    "We just got the results back for the house decorations contest and we got 5th place."
-    "I guess it's because we were on a limited budget compared to other houses. (ToT)/~~~ "
+    #Note to self: Show Boo getting an inviation 
+    "But only those who are invited get the join the fun"
 
     show cg three with dissolve
-
-    "Apparently the Haunted House event we hosted attracted a lot of visitors{w=0.25} and we were able to gain good revenue from it."
-    "Maybe I'll attend Jumpscare Bootcamp next time."
-
-    show cg four with dissolve
-    "Then,{w=0.25} the Masquerade party,{w=0.25} I'd say that was the most memorable party ever!"
-    "I met some very interesting ghouls that day.{p=0.25}Everyone was dressed so nicely,{w=0.25}  I honestly haven't felt so ecstatic in a while..."
+    #Note to self: Show Boo walking in the night
+    "This Ball that is said to change your undead life forever!"
+    "For better or for worse."
 
     jump .city_walk
 
@@ -194,7 +192,7 @@ label .rename_input:
     default invalid_name = False
     $ invalid_name = False
 
-    if player_name.lower() == "heart":
+    if player_name.lower() == "Lophii":
         mum "Someone already has that name!"
         $ invalid_name = True
     elif player_name.lower() == "tulip":
@@ -216,9 +214,9 @@ label .rename_input:
         mum "Can’t take one of the performer’s names!"
         $ invalid_name = True
     elif player_name.lower() == "daisy" or player_name.lower() == "daisy bell":
-        mum "She’s one of the performers. {w=0.25}Oh {0.25}I’m such a big fan!"
+        mum "She’s one of the performers. {w=0.25}Oh{w=0.25} I’m such a big fan!"
         $ invalid_name = True
-    elif player_name.lower() == "fresca":
+    elif player_name.lower() == "Lotus":
         mum "Someone already has that name!"
         $ invalid_name = True
     elif player_name.lower() == "lupin":
