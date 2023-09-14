@@ -11,17 +11,18 @@ label start:
 label intro:
     show cg one with dissolve
     #Note to self: Show ghosts and ghouls dancing in the city 
-    "It is said that once a year, on Halloween night"
-    "Creatures of all kinds attend the Monster Masquerade in the heart of the living city"
+    "{i}Legends whisper of a Monster Masquerade, held every Halloween eve in the heart of Spectre city.{/i}"  
+    "{i}It welcomes lost souls of every kind, living or dead.{/i}"
 
     show cg two with dissolve
     #Note to self: Show Boo getting an inviation 
-    "But only those who are invited get the join the fun"
+    "{i}Strangers share secrets over drinks, as music stirs their spirits and sets their inhibitions free.{/i}"
+    "{i}Under a mask, {w=0.25}any creature can bare its soul without fear of retribution.{w=0.25} This ball is said to change your undead life forever!{/i}"
 
     show cg three with dissolve
     #Note to self: Show Boo walking in the night
-    "This Ball that is said to change your undead life forever!"
-    "For better or for worse."
+    "Boo" "Uh, {w=0.25}I'm just looking for a fun night out to support my girl, Daisy.{p=0.25}She's performing!"
+    "But will it change the fate of our phantom protagonist for better{w=0.25} or for worse?"
 
     jump .city_walk
 
@@ -31,29 +32,24 @@ label intro:
 label .city_walk:
     scene bg city_debug with fade
 
-    show boo normal at center with easeinright: # custom transition instead of easeinright might be nice
+    # play music "city_night.ogg"
+    
+    show boo normal at center with dissolve: # custom transition instead of easeinright might be nice
         # we used the base image size * 0.4 for display in game
         # consider 560x880 the unaltered size for squash and stretch
         # PLEASE not that ANY floats in those paranthesis will cause renpy to
         # think we mean a percentage of the screen! Causes LOTS of graphical weirdness
         xysize ((1400*4/10), (2200*4/10))
         anchor (0.5, 1.0)
-    b "I think this is the right area…{p=0.25}Where did the invitation say it was again?"
-    
+    # play sound "walk.ogg"
+    b "I think this is the right place…"
     show boo:
         xsize -560
         pause 0.5
         xsize 560
         pause 0.5
-    b "..."
+    extend "\nWho sends a broken map in an invitation,{w=0.25} anyways?"
 
-    show boo worried:
-        ease 0.1 xysize ((1400*3/10), (2200*5/10))
-        ease 0.1 xysize ((1400*4/10), (2200*4/10))
-        
-    b "H-{w=0.25}Huh!?!"
-    b "Which way was I supposed to go!?"
-    
     "MINIGAME GOES HERE"
 
     b happy "That wasn't so bad!"
@@ -119,17 +115,16 @@ label reception:
         blur 15
         matrixcolor TintMatrix("#808080ff")
 
-    show boo normal with easeinright:
+    show boo normal with dissolve:
         xysize ((1400*4/10), (2200*4/10))
         anchor (0.5, 1.0)
         pos(0.75, 0.95)
 
     b "Phew!{w=0.25} Made it!"
-
-    b "Now, where should I go next?" # this line is supposed to cue the player to click on something, can be changed
+    b "Now,{w=0.25} where should I go next?" # this line is supposed to cue the player to click on something, can be changed
     
     # make boo dissapear
-    show boo at fall_offscreen
+    hide boo with dissolve
     show bg reception_debug with dissolve:
         blur 0
         matrixcolor TintMatrix("#ffffffff")
@@ -138,7 +133,8 @@ label .inspect:
     call screen reception_point_n_click with dissolve
 
 label .inspecting_painting:
-    b "Ooh!{w=0.25} That's a nice painting!"
+    b "Ooh!{w=0.25} What a lovely painting!"
+    b "I'll have to show it to Daisy later on!"
     jump .inspect
 
 label .inspecting_door:
@@ -164,16 +160,20 @@ label .checking_in:
         pos(0.25, 0.95)
 
     b "Hello,{w=0.25}  I’m Boo and...{w=0.25} I’m here for the party?"
-    mum "Let’s see here.."
+    mum "Haha,{w=0.25}   You're our first Boo of the night."
     mum happy "Ah!{w=0.25} Yes, I see your name,{w=0.25} and may I see your invitation?"
     b "Sure thing!"
-    "Boo hands the invitation to The Host."
 
 label .rename:
 
-    mum normal "And did you want to change your name for the night?"
+    mum normal "Did you want to go by a different name?{w=0.25} Boo is a bit vanilla."
+    mum "You know the saying:{w=0.25} Whatever happens at the Monster Masquerade{w=0.25} stays at the Monster Masquerade.{w=0.25} Haha!"
+    mum "But, that’s just an oldfolk’s tale.{w=0.25} You’re free to share your experiences on social media and whatnot!{w=0.25} This is the 21st century for crying out loud!"
+
 
     menu:
+        "Would you like to change your name?"
+
         "Yes":
             jump .rename_input            
         "No":
@@ -192,9 +192,23 @@ label .rename_input:
     default invalid_name = False
     $ invalid_name = False
 
-    if player_name.lower() == "Lophii":
+    if player_name.lower() == "booo":
+        mum "Hm.{w=0.25} I suppose you never know where an extra o will take you."
+    elif player_name.lower() == "boooo":
+        mum "Oo. {w=0.25}That does sound better."
+    elif player_name.lower() == "booooo":
+        mum "Ooo. {w=0.25}It's spookier now than before."
+    elif player_name.lower() == "boooooo":
+        mum "A lovely idea to extend your name. {w=0.25}It's much more mysterious."
+    elif player_name.lower() == "booooooo":
+        mum "Booooooo is fine, {w=0.25}as long as you're not booing our performers."
+    elif player_name.lower() == "boooooooo":
+        mum "Boooooooo is rather long, {w=0.25}don't you think? {w=0.25}Suit yourself"
+    elif player_name.lower() == "booooooooo":
+        mum "BooOOOOooo!{w=0.25} It's quite a lungful.{w=0.25}  Very bold."
+    elif player_name.lower() == "Lophii":
         mum "Someone already has that name!"
-        $ invalid_name = True
+        $invalid_name = True
     elif player_name.lower() == "tulip":
         mum "Someone already has that name!{w=0.25} She has such a pretty dress…"
         $ invalid_name = True
@@ -202,7 +216,7 @@ label .rename_input:
         mum "Someone already has that name!{w=0.25} Kind of an odd name if you ask me…"
         $ invalid_name = True
     elif player_name.lower() == "cheddar":
-        mum "I'm afraid that name is already taken by our Goblin Chef."
+        mum "I'm afraid that name is already taken by our goblin chef."
         $ invalid_name = True
     elif player_name.lower() == "rind":
         mum "Can’t take one of the performer’s names!"
@@ -216,14 +230,42 @@ label .rename_input:
     elif player_name.lower() == "daisy" or player_name.lower() == "daisy bell":
         mum "She’s one of the performers. {w=0.25}Oh{w=0.25} I’m such a big fan!"
         $ invalid_name = True
-    elif player_name.lower() == "Lotus":
+    elif player_name.lower() == "host":
+        mum "That’s…{w=0.25} my name?"
+        $ invalid_name = True
+    elif player_name.lower() == "lotus":
         mum "Someone already has that name!"
         $ invalid_name = True
     elif player_name.lower() == "lupin":
         mum "I wonder if he’s seen the anime…"
         $ invalid_name = True
-
-
+    elif player_name.lower() == "moth":
+        mum "Apologies, {w=0.25}that name has already been taken!"
+        $ invalid_name = True
+    elif player_name.lower() == "princess":
+        mum "Oh, {w=0.25}that’s a special guest. {w=0.25}Unfortunately she already RSVPd with that name."
+        $ invalid_name = True
+    elif player_name.lower() == "aranea":
+        mum "Sorry!{w=0.25} We have a special guest attending with that chosen name. {w=0.25}Apparently, {w=0.25}she’s an influencer."
+        $ invalid_name = True
+    elif player_name.lower() == "wish":
+        mum "When you wish upon a star! {w=0.25}Oh! {w=0.25}That’s a copyrighted song, {w=0.25}I shouldn’t sing it. {w=0.25}Yeah, {w=0.25}that name has already been taken."
+        $ invalid_name = True
+    elif player_name.lower() == "lagoon" or player_name.lower() == "lagoon man":
+        mum "Ocean man, {w=0.25}take it by the hand {w=0.25}don’t you understand?? {p=0.25}That name is taken"
+        $ invalid_name = True
+    elif player_name.lower() == "peacock":
+        mum "A peculiar fellow came in with that name... {w=0.25}They signed up last minute!"
+        $ invalid_name = True
+    elif player_name.lower() == "tom":
+        mum "Honk Honk! {w=0.25}Hehe... {w=0.25}Oh! {w=0.25}My apologies, {w=0.25}that name was already taken"
+        $ invalid_name = True
+    elif player_name.lower() == "grim":
+        mum "I heard Grim Reapers is an occupation title and not really a singular character. {w=0.25}That is what the guest told me when RSVPing into the party."
+        $ invalid_name = True
+    elif player_name.lower() == "peppy":
+        mum "Someone already has that name! {w=0.25}Her magic tricks are out of this world! "
+        $ invalid_name = True
 
     if invalid_name:
         jump .rename_input
@@ -249,9 +291,13 @@ label .rename_finished:
 
     $ checked_in = True    
     # make boo dissapear
-    show boo at fall_offscreen
-    show mummy at fall_offscreen
-    show bg reception_debug with dissolve:
-        blur 0
-        matrixcolor TintMatrix("#ffffffff")
-    jump .inspect
+    scene bg party with fade
+    return
+    
+    
+    
+label enter_party:
+    "{i}Finally, we made it to the party. All manner of monsters meanders about. It's a night for meeting new souls—{/i}"
+    tul "Hey Boo! Over here!"
+    "{i}Ah! It’s your friend Tulip.{/i}"
+    
