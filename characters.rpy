@@ -88,4 +88,21 @@ image mummy sad talking:
 define mum = Character("Host", callback=mummy_lip_flap, image="mummy")
 
 
-define tul = Character("Tulip")
+
+init -1 python:
+    def tulip_lip_flap(event, **kwargs):
+        lip_flap("tulip", event, **kwargs)
+
+
+define tul = Character("Tulip", callback=tulip_lip_flap, image="tulip")
+
+
+init -1 python:
+    def daisy_lip_flap(event, **kwargs):
+        lip_flap("daisy", event, **kwargs)
+
+define dsy = Character("Daisy", callback=daisy_lip_flap, image="daisy")
+
+
+
+define cdr = Character("Cheddar")

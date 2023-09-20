@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 
 # The game starts here.
@@ -300,4 +300,4 @@ label enter_party:
     "{i}Finally, we made it to the party. All manner of monsters meanders about. It's a night for meeting new souls—{/i}"
     tul "Hey Boo! Over here!"
     "{i}Ah! It’s your friend Tulip.{/i}"
-    
+    jump chapter_1
