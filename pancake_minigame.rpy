@@ -22,6 +22,43 @@
 # Commercial licensing for this software is available, please
 # contact pytom@bishoujo.us for information.
 
+label pancake_minigame_loop:
+    show bg pancake_minigame
+    show table pancake_minigame at pos_table
+    show Lophii pancake_minigame at pos_lophii
+    show lupin pancake_minigame at pos_lupin
+    show tulip pancake_minigame at pos_tulip
+    show glass pancake_minigame as glass_1 at pos_glass_1
+    show glass pancake_minigame as glass_2 at pos_glass_2
+    show glass pancake_minigame as glass_3 at pos_glass_3
+
+    python:
+        k = Klondike(1)
+        k.set_sensitive(False)
+        k.show()
+
+    show foreground pancake_minigame as foreground_1 at pos_foreground_1
+    show foreground pancake_minigame as foreground_2 at pos_foreground_2
+
+    while True:
+
+        python:
+            k.set_sensitive(True)
+            event = k.interact()
+
+            if event:
+                renpy.checkpoint()
+
+        if event == "win":
+            jump win
+
+label win:
+    
+    "Congratulations!"
+    # TODO make this move to proper point in chapter_1
+    jump chapter_1
+
+
 init python:
 
     import pygame
