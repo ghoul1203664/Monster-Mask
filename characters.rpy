@@ -104,5 +104,14 @@ init -1 python:
 define dsy = Character("Daisy", callback=daisy_lip_flap, image="daisy")
 
 
+init -1 python:
+    def cheddar_lip_flap(event, **kwargs):
+        lip_flap("cheddar", event, **kwargs)
 
-define cdr = Character("Cheddar")
+define cdr = Character("Cheddar", callback=cheddar_lip_flap, image="daisy")
+
+
+define lup = Character("Lupin", callback=cheddar_lip_flap, image="lupin")
+
+
+define mor = Character("Lophii Morfs", callback=cheddar_lip_flap, image="lophii")
