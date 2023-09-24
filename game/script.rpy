@@ -21,7 +21,7 @@ label start:
 
     show foreground pancake_minigame as foreground_1 at pos_foreground_1
     show foreground pancake_minigame as foreground_2 at pos_foreground_2
-label quick_continue:
+label pancake_minigame_loop:
     
     while True:
 
