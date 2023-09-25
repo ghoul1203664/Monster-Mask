@@ -5,7 +5,7 @@
 # just having it jump in case we want to seperate the labels
 # into different files later
 label start:
-    jump intro
+    jump chapter_1
 
 
 label intro:
@@ -21,7 +21,7 @@ label intro:
 
     show cg three with dissolve
     #Note to self: Show Boo walking in the night
-    "Boo" "Uh, {w=0.25}I'm just looking for a fun night out to support my girl, Daisy.{p=0.25}She's performing!"
+    "[player_name]" "Uh, {w=0.25}I'm just looking for a fun night out to support my girl, Daisy.{p=0.25}She's performing!"
     "But will it change the fate of our phantom protagonist for better{w=0.25} or for worse?"
 
     jump .city_walk
@@ -133,21 +133,21 @@ label .inspect:
     call screen reception_point_n_click with dissolve
 
 label .inspecting_painting:
-    b "Ooh!{w=0.25} What a lovely painting!"
-    b "I'll have to show it to Daisy later on!"
+    "[player_name]" "Ooh!{w=0.25} What a lovely painting!"
+    "[player_name]" "I'll have to show it to Daisy later on!"
     jump .inspect
 
 label .inspecting_door:
     if checked_in:
-        b "time to go in!"
-        jump .inspect # TODO: Make this take you to the next scene
+        "[player_name]" "Time to go in!"
+        jump enter_party
     else:
-        b "Oops!{w=0.25} I have to check in first!"
+        "[player_name]" "Oops!{w=0.25} I have to check in first!"
         jump .inspect
 
 label .checking_in:
     if checked_in:
-        b "I've already checked in."
+        "[player_name]" "I've already checked in."
         jump .inspect
 
     show boo normal with easeinright:
@@ -159,8 +159,8 @@ label .checking_in:
         anchor (0.5, 1.0)
         pos(0.25, 0.95)
 
-    b "Hello,{w=0.25}  I’m Boo and...{w=0.25} I’m here for the party?"
-    mum "Haha,{w=0.25}   You're our first Boo of the night."
+    b "Hello,{w=0.25} I’m Boo and...{w=0.25} I’m here for the party?"
+    mum "Haha,{w=0.25} You're our first Boo of the night."
     mum happy "Ah!{w=0.25} Yes, I see your name,{w=0.25} and may I see your invitation?"
     b "Sure thing!"
 
@@ -276,7 +276,7 @@ label .rename_input:
     menu:
         "Yes":
             if player_name.lower() == "boo":
-                "Sticking with the classic I see~"
+                mum "Sticking with the classic I see~"
             jump .rename_finished
         "No":
             jump .rename_input
@@ -291,13 +291,18 @@ label .rename_finished:
 
     $ checked_in = True    
     # make boo dissapear
-    scene bg party with fade
-    return
+
+    hide boo
+    hide mummy
+    with dissolve
+
+    jump .inspect
     
     
     
 label enter_party:
+    scene bg party
     "{i}Finally, we made it to the party. All manner of monsters meanders about. It's a night for meeting new souls—{/i}"
     tul "Hey Boo! Over here!"
     "{i}Ah! It’s your friend Tulip.{/i}"
-    
+    jump chapter_1
