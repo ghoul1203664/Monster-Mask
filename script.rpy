@@ -5,23 +5,25 @@
 # just having it jump in case we want to seperate the labels
 # into different files later
 label start:
-    jump chapter_1
+    jump reception
 
 
 label intro:
-    show cg one with dissolve
+    scene black with dissolve
+    play music "audio/StarlightSolitude.mp3" loop
+    #show cg one with dissolve
     #Note to self: Show ghosts and ghouls dancing in the city 
     "{i}Legends whisper of a Monster Masquerade, held every Halloween eve in the heart of Spectre city.{/i}"  
     "{i}It welcomes lost souls of every kind, living or dead.{/i}"
 
-    show cg two with dissolve
+    #show cg two with dissolve
     #Note to self: Show Boo getting an inviation 
     "{i}Strangers share secrets over drinks, as music stirs their spirits and sets their inhibitions free.{/i}"
     "{i}Under a mask, {w=0.25}any creature can bare its soul without fear of retribution.{w=0.25} This ball is said to change your undead life forever!{/i}"
 
-    show cg three with dissolve
+    #show cg three with dissolve
     #Note to self: Show Boo walking in the night
-    "[player_name]" "Uh, {w=0.25}I'm just looking for a fun night out to support my girl, Daisy.{p=0.25}She's performing!"
+    # "[player_name]" "Uh, {w=0.25}I'm just looking for a fun night out to support my girl, Daisy.{p=0.25}She's performing!"
     "But will it change the fate of our phantom protagonist for better{w=0.25} or for worse?"
 
     jump .city_walk
@@ -32,7 +34,7 @@ label intro:
 label .city_walk:
     scene bg city_debug with fade
 
-    # play music "city_night.ogg"
+    play music "audio/NightWalk.mp3" loop
     
     show boo normal at center with dissolve: # custom transition instead of easeinright might be nice
         # we used the base image size * 0.4 for display in game
@@ -50,7 +52,7 @@ label .city_walk:
         pause 0.5
     extend "\nWho sends a broken map in an invitation,{w=0.25} anyways?"
 
-    "MINIGAME GOES HERE"
+    call screen scr_map_minigame
 
     b happy "That wasn't so bad!"
 
@@ -111,6 +113,9 @@ screen reception_point_n_click:
 default checked_in = False
 
 label reception:
+
+    play music "audio/BeautifulBoy.mp3" loop
+
     scene bg reception_debug with fade:
         blur 15
         matrixcolor TintMatrix("#808080ff")
@@ -285,9 +290,9 @@ label .rename_input:
 label .rename_finished:
     mum "Everything checks out!{w=0.25} The entrance is the door to your right.{w=0.25} Have fun!"
     b "Thank you!"
-    mum "Oh!{w=0.25} One more thing.{w=0.25} Take this."
+    # mum "Oh!{w=0.25} One more thing.{w=0.25} Take this."
 
-    "CHEST KIT TUTORIAL GOES HERE."
+    # "CHEST KIT TUTORIAL GOES HERE."
 
     $ checked_in = True    
     # make boo dissapear
