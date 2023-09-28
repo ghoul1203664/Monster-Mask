@@ -138,9 +138,13 @@ label chapter_1:
     b "Thank you!"
     "[player_name]" "Phew… Close call."
 
+    scene black with dissolve
 
-    lup "Heya, mind if I sit here?"
+    voice "audio/Lupin_1_1.mp3"
+    "????" "Heya,{w=0.25} mind if I sit here?"
     
+    return
+
     mor "Room for one more?"
 
     tul "Yeah sure!"
