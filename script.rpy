@@ -5,7 +5,7 @@
 # just having it jump in case we want to seperate the labels
 # into different files later
 label start:
-    jump reception
+    jump intro
 
 
 label intro:
@@ -36,23 +36,17 @@ label .city_walk:
 
     play music "audio/NightWalk.mp3" loop
     
-    show boo normal at center with dissolve: # custom transition instead of easeinright might be nice
-        # we used the base image size * 0.4 for display in game
-        # consider 560x880 the unaltered size for squash and stretch
-        # PLEASE not that ANY floats in those paranthesis will cause renpy to
-        # think we mean a percentage of the screen! Causes LOTS of graphical weirdness
-        xysize ((1400*4/10), (2200*4/10))
-        anchor (0.5, 1.0)
+    show boo normal at center, boo_size, boo_face_left with dissolve
     # play sound "walk.ogg"
     b "I think this is the right place…"
     show boo:
-        xsize -560
+        boo_size
         pause 0.5
-        xsize 560
+        boo_face_left
         pause 0.5
     extend "\nWho sends a broken map in an invitation,{w=0.25} anyways?"
 
-    call screen scr_map_minigame
+    # call screen scr_map_minigame
 
     b happy "That wasn't so bad!"
 
@@ -120,10 +114,10 @@ label reception:
         blur 15
         matrixcolor TintMatrix("#808080ff")
 
-    show boo normal with dissolve:
-        xysize ((1400*4/10), (2200*4/10))
-        anchor (0.5, 1.0)
+    show boo normal at boo_size, boo_face_left:
         pos(0.75, 0.95)
+    with dissolve
+
 
     b "Phew!{w=0.25} Made it!"
     b "Now,{w=0.25} where should I go next?" # this line is supposed to cue the player to click on something, can be changed
@@ -155,14 +149,16 @@ label .checking_in:
         "[player_name]" "I've already checked in."
         jump .inspect
 
-    show boo normal with easeinright:
-        xysize ((1400*4/10), (2200*4/10))
-        anchor (0.5, 1.0)
+
+    scene bg reception_debug:
+        blur 15
+        matrixcolor TintMatrix("#808080ff")
+
+    show boo normal at boo_size, boo_face_left:
         pos(0.75, 0.95)
-    show mummy normal with easeinleft:
-        xysize ((1400*4/10), (2200*4/10))
-        anchor (0.5, 1.0)
+    show mummy normal at mummy_size, mummy_face_right:
         pos(0.25, 0.95)
+    with dissolve
 
     b "Hello,{w=0.25} I’m Boo and...{w=0.25} I’m here for the party?"
     mum "Haha,{w=0.25} You're our first Boo of the night."
@@ -299,6 +295,9 @@ label .rename_finished:
 
     hide boo
     hide mummy
+    show bg reception_debug:
+        blur 0
+        matrixcolor TintMatrix("fff")
     with dissolve
 
     jump .inspect

@@ -6,6 +6,36 @@ transform fall_offscreen:
     parallel:
         ease 0.3 yanchor 0.0
 
+transform character_anchor:
+    anchor (0.5, 1.0)
+
+transform boo_size:
+    character_anchor
+    xsize (1500*3/10)
+    ysize (2800*3/10)
+
+transform boo_face_left:
+    boo_size
+    xsize -(1500*3/10)
+
+# got odd mummy image sizes in demo
+# please don't question it
+transform mummy_size:
+    character_anchor
+    xsize (301*2)
+    ysize (427*2)
+
+transform mummy_face_right:
+    mummy_size
+    xsize -(301*2)
+
+
+transform talk_bob:
+    linear 0.1 yoffset 0
+    repeat
+
+transform talk_low:
+    linear 0.1 yoffset 0
 
 
 # Character definition for Player (Boo)
@@ -28,24 +58,30 @@ init -1 python:
 
 image boo normal talking:
     "boo normal"
+    talk_low
     pause 0.1
     "boo normal talk"
+    talk_bob
     pause 0.1
 
     repeat
 
 image boo happy talking:
     "boo happy"
+    talk_low
     pause 0.1
     "boo happy talk"
+    talk_bob
     pause 0.1
 
     repeat
 
 image boo worried talking:
     "boo worried"
+    talk_low
     pause 0.1
     "boo worried talk"
+    talk_bob
     pause 0.1
 
     repeat
