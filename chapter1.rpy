@@ -7,13 +7,13 @@ label chapter_1:
 
     show tulip normal with dissolve:
         tul_dsy_face_left
-        pos(0.2, 1.0)
+        pos(0.3, 1.0)
     tul "How it goin’ girl?{w=0.25} Glad that you made it."
 
     show daisy worried with dissolve:
         tul_dsy_size
-        anchor (0.5, 1.0)
-        pos(0.8, 1.0)
+        anchor(0.5, 1.0)
+        pos(0.7, 1.0)
     dsy worried "Yeah,{w=0.25} we were getting worried!"
     
     show boo normal at center with dissolve:
@@ -30,25 +30,25 @@ label chapter_1:
     hide daisy with dissolve
 
     show boo:
-        pos(0.7, 1.0)
+        pos(0.6, 1.0)
     show tulip:
-        pos(0.3, 1.0)
+        pos(0.4, 1.0)
     with ease
 
     show boo at boo_face_left
     "Daisy" "Hello,{w=0.25} hope you’re all having a spoOOOooOOOoktacular night!{w=0.25} We're the Prime-Ribs{w=0.25} and we’ll be presenting a very fun set called Fruity Call!"
     play music "audio/FruitPhone1.mp3" loop
 
-    tul curious "So, {w=0.25}whatcha been up to lately?"
+    tul happy "So, {w=0.25}whatcha been up to lately?"
     
     menu:
         "Tulip picks up the menu and scans for any dishes she might want to try.{w=0.25} She glances at you,{w=0.25} awaiting your reply."
         
         "Not much.":
             b normal "Just getting ready for the ball."
-            b worried "I did hear a strange noise today {w=0.25} and I thought it was another exterminator on the hunt."
+            b worried "I did hear a strange noise today{w=0.25} and I thought it was another exterminator on the hunt."
             
-            tul concerned "Oh no!"
+            tul worried "Oh no!"
            
             b normal "It was a false alarm,{w=0.25} just some kids in  costumes looking for a spooky place to check out."
            
@@ -77,13 +77,14 @@ label chapter_1:
 
 
     show boo:
-        pos(0.8, 1.0)
+        pos(0.7, 1.0)
     show tulip:
-        pos(0.2, 1.0)
+        pos(0.3, 1.0)
     with ease
     
-    show cheddar:
+    show cheddar normal:
         cheddar_size
+        pos(0.5, 1.0)
     with dissolve
     cdr "Excuse me!{w=0.25} Are you two ladies ready to order?"
    
@@ -97,7 +98,7 @@ label chapter_1:
         cheddar_face_right
     cdr "Alright,{w=0.25} and how about you?"
 
-    b "{cps=30}Uh...{w=0.25} I'll have...{/cps}"
+    b worried "{cps=30}Uh...{w=0.25} I'll have...{/cps}"
     "[player_name]" "{i}These all look so tasty!{w=0.25} I wish I could order them all!{w=0.25} But I still get phantom fullness when I eat too much...{/i}"
 
     menu:

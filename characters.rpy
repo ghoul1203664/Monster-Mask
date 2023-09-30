@@ -50,8 +50,8 @@ transform tul_dsy_face_left:
 
 transform cheddar_size:
     character_anchor
-    xsize (1500*2/10)
-    ysize (2800*2/10)
+    xsize (1500*25/100)
+    ysize (2800*25/100)
 
 transform cheddar_face_right:
     cheddar_size
@@ -204,6 +204,15 @@ define dsy = Character("Daisy", callback=daisy_lip_flap, image="daisy")
 init -1 python:
     def cheddar_lip_flap(event, **kwargs):
         lip_flap("cheddar", event, **kwargs)
+
+image cheddar normal talking:
+    "cheddar normal"
+    pause 0.1
+    "cheddar normal talk"
+    pause 0.1
+
+    repeat
+
 
 define cdr = Character("Cheddar", callback=cheddar_lip_flap, image="cheddar")
 
