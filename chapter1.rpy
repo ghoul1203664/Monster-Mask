@@ -8,7 +8,7 @@ label chapter_1:
     show tulip normal with dissolve:
         anchor (0.5, 1.0)
         pos(0.2, 1.0)
-    tul "Hey!{w=0.25} How it goin’ girl?{w=0.25} Glad that you made it."
+    tul "How it goin’ girl?{w=0.25} Glad that you made it."
 
     show daisy worried with dissolve:
         anchor (0.5, 1.0)
@@ -20,7 +20,7 @@ label chapter_1:
     
     b "Sorry for the wait!{w=0.25} I got lost on the way,{w=0.25} and almost dropped a piece of the map!" 
     
-    tul "Well,{w=0.25} good thing you solved the puzzle! {w=0.25}You made it just in time to see Daisy perform!{w=0.25} Ohhh,{w=0.25} she's going to be wonderful!"
+    tul "It’s chill.{w=0.25} You made it just in time to see Daisy perform!{w=0.25}Ooo I’m so hyped to see what she’s been cookin all these months!"
 
     dsy happy "Speaking of that,{w=0.25} I gotta check on the boys.{w=0.25} Marrow isn’t here yet and we’re running out of time.{w=0.25} I’ll see you all later!"
 
@@ -35,6 +35,7 @@ label chapter_1:
     with ease
 
     "Daisy" "Hello,{w=0.25} hope you’re all having a spoOOOooOOOoktacular night!{w=0.25} We're the Prime-Ribs{w=0.25} and we’ll be presenting a very fun set called Fruity Call!"
+    play music "audio/FruitPhone1.mp3" loop
 
     tul curious "So, {w=0.25}whatcha been up to lately?"
     
@@ -43,20 +44,21 @@ label chapter_1:
         
         "Not much.":
             b normal "Just getting ready for the ball."
-            b worried "I did hear a strange noise today{w=0.25} and I thought it was another exterminator on the hunt."
+            b worried "I did hear a strange noise today {w=0.25} and I thought it was another exterminator on the hunt."
             
-            tul concerned "Oh no!{w=0.25} You just moved to this mansion."
+            tul concerned "Oh no!"
            
             b normal "It was a false alarm,{w=0.25} just some kids in  costumes looking for a spooky place to check out."
            
-            tul normal "I bet you decked out your place real nice for the season."
+            tul normal "Betcha they were just- {w=0.25} too scared of how awesome you are. Ya know?"
             
             b worried "Haha..."
         
         "A lot.":
-            b normal "I had sooo much to do today.{w=0.25} You should see how I decorated the mansion!"
-            b happy "It's so homey that it's sure to deter any thrill-seeking kids looking for haunted houses this season."
-            b normal "Some of them actually came at the worst time,{w=0.25} right when I was scrambling to get ready!{w=0.25} Good thing I found these new shoes!"
+            b normal "I had sooo much to do today. You should see how I decorated the mansion!"
+            b happy "I really tried to work on my jumscare face this season, but it was a total flop…"
+            b normal "I’ve just been up to so many last-minute things!!  I wish Biggs and Buggs had planned better.."
+            b happy "But!{w=0.25}  Good thing I found these new shoes just in time for the party"
             b happy "Oh,{w=0.25} and my blog also just reached it’s first anniversary!"
             
             tul happy "You should write about us after,{w=0.25} you busy bee!{w=0.25} I’m happy to see you buzzing with excitement over all the thing things you do."
