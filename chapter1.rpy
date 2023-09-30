@@ -15,9 +15,8 @@ label chapter_1:
     dsy worried "Yeah,{w=0.25} we were getting worried!"
     
     show boo normal at center with dissolve:
-        xysize (-(1500*3/10), (2800*3/10))
-        anchor (0.5, 1.0)
-
+        boo_size
+    
     b "Sorry for the wait!{w=0.25} I got lost on the way,{w=0.25} and almost dropped a piece of the map!" 
     
     tul "Well,{w=0.25} good thing you solved the puzzle! {w=0.25}You made it just in time to see Daisy perform!{w=0.25} Ohhh,{w=0.25} she's going to be wonderful!"
