@@ -5,7 +5,7 @@
 # just having it jump in case we want to seperate the labels
 # into different files later
 label start:
-    jump reception
+    jump intro
 
 
 label intro:
@@ -33,6 +33,7 @@ label intro:
 # see https://www.renpy.org/doc/html/label.html#label-statement
 label .city_walk:
     scene bg city_debug with fade
+    
 
     play music "audio/NightWalk.mp3" loop
     
@@ -52,7 +53,9 @@ label .city_walk:
         pause 0.5
     extend "\nWho sends a broken map in an invitation,{w=0.25} anyways?"
 
-    call screen scr_map_minigame
+    #call screen scr_map_minigame
+    "The map pieces fall out and scatter on the floor, you pick up each piece and begin to solve the puzzle"
+    "Boo is quickly able to solve the puzzle with ease and finds the location of the party!"
 
     b happy "That wasn't so bad!"
 
@@ -275,7 +278,6 @@ label .rename_input:
     if invalid_name:
         jump .rename_input
 
-
     "You'd prefer [player_name] tonight then?"
 
     menu:
@@ -306,7 +308,8 @@ label .rename_finished:
     
     
 label enter_party:
-    scene bg party
+    scene bg stairs_debug with fade
+
     "{i}Finally, we made it to the party. All manner of monsters meanders about. It's a night for meeting new souls—{/i}"
     tul "Hey Boo! Over here!"
     "{i}Ah! It’s your friend Tulip.{/i}"

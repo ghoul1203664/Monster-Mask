@@ -2,7 +2,8 @@ label chapter_1:
     scene black with fade
     centered "{color=#fff}Chapter 1{/color}"
 
-    scene bg party
+    scene bg stairs_debug with fade
+
 
     show tulip normal with dissolve:
         anchor (0.5, 1.0)
