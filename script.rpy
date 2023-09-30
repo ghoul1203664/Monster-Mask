@@ -55,7 +55,7 @@ label .city_walk:
 
     #call screen scr_map_minigame
     "The map pieces fall out and scatter on the floor, you pick up each piece and begin to solve the puzzle"
-    "Boo is quickly able to solve the puzzle with ease and finds the location of the party!"
+    "You're quickly able to solve the puzzle with meticulously"
 
     b happy "That wasn't so bad!"
 
