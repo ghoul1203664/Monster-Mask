@@ -16,9 +16,8 @@ label chapter_1:
     dsy worried "Yeah,{w=0.25} we were getting worried!"
     
     show boo normal at center with dissolve:
-        xysize ((1400*4/10), (2200*4/10))
-        anchor (0.5, 1.0)
-
+        boo_size
+    
     b "Sorry for the wait!{w=0.25} I got lost on the way,{w=0.25} and almost dropped a piece of the map!" 
     
     tul "Well,{w=0.25} good thing you solved the puzzle! {w=0.25}You made it just in time to see Daisy perform!{w=0.25} Ohhh,{w=0.25} she's going to be wonderful!"
@@ -44,7 +43,7 @@ label chapter_1:
         
         "Not much.":
             b normal "Just getting ready for the ball."
-            b sweat "I did hear a strange noise today{w=0.25} and I thought it was another exterminator on the hunt."
+            b worried "I did hear a strange noise today{w=0.25} and I thought it was another exterminator on the hunt."
             
             tul concerned "Oh no!{w=0.25} You just moved to this mansion."
            
@@ -52,7 +51,7 @@ label chapter_1:
            
             tul normal "I bet you decked out your place real nice for the season."
             
-            b sweat "Haha..."
+            b worried "Haha..."
         
         "A lot.":
             b normal "I had sooo much to do today.{w=0.25} You should see how I decorated the mansion!"
@@ -63,11 +62,11 @@ label chapter_1:
             tul happy "You should write about us after,{w=0.25} you busy bee!{w=0.25} I’m happy to see you buzzing with excitement over all the thing things you do."
             tul "But take a break sometimes.{w=0.25} Who knows,{w=0.25} you might die twice because of stress!"
             
-            b sweat "Haha,{w=0.25} yeah."
+            b worried "Haha,{w=0.25} yeah."
             "[player_name]" "{i}YOU CAN DIE TWICE??{/i}" # hard coded name so mouth doesn't move
 
             tul normal "It’s been kinda wild on my side too,{w=0.25} preparing for the holidays."
-            tul sweat "I know,{w=0.25} I know.{w=0.25} It’s still spooky season{w=0.25} but we musicians need to get ready EARLY for the biggest event of the year. "
+            tul worried "I know,{w=0.25} I know.{w=0.25} It’s still spooky season{w=0.25} but we musicians need to get ready EARLY for the biggest event of the year. "
             tul "It’s never too early to start learning new holiday jingles and to rehearse the classics!"
 
             b normal "Oooh,{w=0.25} sounds exciting!"
