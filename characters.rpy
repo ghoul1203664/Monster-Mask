@@ -38,6 +38,26 @@ transform talk_low:
     linear 0.1 yoffset 0
 
 
+transform tul_dsy_size:
+    character_anchor
+    xsize (1400*3/10)
+    ysize (2900*3/10)
+
+transform tul_dsy_face_left:
+    tul_dsy_size
+    xsize -(1400*3/10)
+
+
+transform cheddar_size:
+    character_anchor
+    xsize (1500*2/10)
+    ysize (2800*2/10)
+
+transform cheddar_face_right:
+    cheddar_size
+    xsize -(1500*2/10)
+
+
 # Character definition for Player (Boo)
 init -1 python:
     # want to see if I can make this more generic later on
@@ -144,7 +164,7 @@ init -1 python:
     def cheddar_lip_flap(event, **kwargs):
         lip_flap("cheddar", event, **kwargs)
 
-define cdr = Character("Cheddar", callback=cheddar_lip_flap, image="daisy")
+define cdr = Character("Cheddar", callback=cheddar_lip_flap, image="cheddar")
 
 
 define lup = Character("Lupin", callback=cheddar_lip_flap, image="lupin")

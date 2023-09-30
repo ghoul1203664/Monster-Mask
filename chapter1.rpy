@@ -6,11 +6,12 @@ label chapter_1:
 
 
     show tulip normal with dissolve:
-        anchor (0.5, 1.0)
+        tul_dsy_face_left
         pos(0.2, 1.0)
     tul "How it goin’ girl?{w=0.25} Glad that you made it."
 
     show daisy worried with dissolve:
+        tul_dsy_size
         anchor (0.5, 1.0)
         pos(0.8, 1.0)
     dsy worried "Yeah,{w=0.25} we were getting worried!"
@@ -34,6 +35,7 @@ label chapter_1:
         pos(0.3, 1.0)
     with ease
 
+    show boo at boo_face_left
     "Daisy" "Hello,{w=0.25} hope you’re all having a spoOOOooOOOoktacular night!{w=0.25} We're the Prime-Ribs{w=0.25} and we’ll be presenting a very fun set called Fruity Call!"
     play music "audio/FruitPhone1.mp3" loop
 
@@ -80,7 +82,9 @@ label chapter_1:
         pos(0.2, 1.0)
     with ease
     
-    show cheddar with dissolve
+    show cheddar:
+        cheddar_size
+    with dissolve
     cdr "Excuse me!{w=0.25} Are you two ladies ready to order?"
    
     b "O-{w=0.25}oh!{w=0.25} Yeah,{w=0.25} I’m ready!"
@@ -89,6 +93,8 @@ label chapter_1:
     tul "I’ll get the spaghetti and eyeballs."
 
     # TODO: make cheddar turn to look at boo's sprite here
+    show cheddar:
+        cheddar_face_right
     cdr "Alright,{w=0.25} and how about you?"
 
     b "{cps=30}Uh...{w=0.25} I'll have...{/cps}"
