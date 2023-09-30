@@ -307,8 +307,9 @@ label .rename_finished:
     
     
 label enter_party:
-    scene bg party
+    scene bg stairs_debug with fade
+
     "{i}Finally, we made it to the party. All manner of monsters meanders about. It's a night for meeting new souls—{/i}"
-    tul "Hey Boo! Over here!"
+    tulip normal "Hey Boo! Over here!"
     "{i}Ah! It’s your friend Tulip.{/i}"
     jump chapter_1
