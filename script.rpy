@@ -117,7 +117,7 @@ label reception:
         matrixcolor TintMatrix("#808080ff")
 
     show boo normal at boo_size, boo_face_left:
-        pos(0.75, 0.95)
+        pos(0.75, 1.0)
     with dissolve
 
 
@@ -157,9 +157,9 @@ label .checking_in:
         matrixcolor TintMatrix("#808080ff")
 
     show boo normal at boo_size, boo_face_left:
-        pos(0.75, 0.95)
+        pos(0.75, 1.0)
     show mummy normal at mummy_size, mummy_face_right:
-        pos(0.25, 0.95)
+        pos(0.25, 1.0)
     with dissolve
 
     b "Hello,{w=0.25} I’m Boo and...{w=0.25} I’m here for the party?"
