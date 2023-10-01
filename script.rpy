@@ -40,22 +40,25 @@ label .city_walk:
     scene bg city_debug with fade
 
     play music "audio/NightWalk.mp3" loop
-    
+
     show boo normal at center, boo_size, boo_face_left with dissolve
     # play sound "walk.ogg"
+    voice "audio/Boo_0_1.wav"    
     b "I think this is the right place…"
+ 
     show boo:
         boo_size
         pause 0.5
         boo_face_left
         pause 0.5
-    extend "\nWho sends a broken map in an invitation,{w=0.25} anyways?"
+    voice "audio/Boo_0_1_1.wav" 
+    extend "Who sends a broken map in an invitation,{w=0.25} anyways?"
     "{i}The map pieces fall out and scatter on the floor,{w=0.25} you pick up each piece and begin to solve the puzzle.{/i}"
     "{i}With careful effort,{w=0.25} you are able to re-construct the map to find the location of the party!{/i}"
 
     # call screen scr_map_minigame
-
-    b happy "That wasn't so bad!"
+    voice "audio/Boo_0_3.wav"   
+    b happy "Phew,That wasn't so bad!"
 
     jump reception
 
@@ -166,9 +169,11 @@ label .checking_in:
     show mummy normal at mummy_size, mummy_face_right:
         pos(0.25, 1.0)
     with dissolve
-
+    voice "audio/Boo_0_4.wav"   
     b "Hello,{w=0.25} I’m Boo and...{w=0.25} I’m here for the party?"
+    voice "audio/Maat_0_1.wav"   
     mum "Haha,{w=0.25} You're our first Boo of the night."
+    voice "audio/Maat_0_2.wav"   
     mum happy "Ah!{w=0.25} Yes, I see your name,{w=0.25} and may I see your invitation?"
     b "Sure thing!"
 
@@ -292,6 +297,7 @@ label .rename_input:
 
 label .rename_finished:
     mum "Everything checks out!{w=0.25} The entrance is the door to your right.{w=0.25} Have fun!"
+    voice "audio/Boo_0_6.wav"   
     b "Thank you!"
     # mum "Oh!{w=0.25} One more thing.{w=0.25} Take this."
 
