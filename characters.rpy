@@ -18,6 +18,34 @@ transform boo_face_left:
     boo_size
     xsize -(1500*3/10)
 
+
+transform tulip_size:
+    character_anchor
+    xsize (1500*3/10)
+    ysize (2800*3/10)
+
+transform tulip_face_left:
+    tulip_size
+    xsize -(1500*3/10)
+
+transform daisy_size:
+    character_anchor
+    xsize (1500*3/10)
+    ysize (2800*3/10)
+
+transform daisy_face_left:
+    daisy_size
+    xsize -(1500*3/10)
+
+transform cheddar_size:
+    character_anchor
+    xsize (1500*3/10)
+    ysize (2800*3/10)
+
+transform cheddar_face_left:
+    cheddar_size
+    xsize -(1500*3/10)
+
 # got odd mummy image sizes in demo
 # please don't question it
 transform mummy_size:
@@ -54,35 +82,33 @@ init -1 python:
     def boo_lip_flap(event, **kwargs):
         lip_flap("boo", event, **kwargs)
 
-
-
 image boo normal talking:
     "boo normal"
     talk_low
-    pause 0.1
+    pause 0.3
     "boo normal talk"
     talk_bob
-    pause 0.1
+    pause 0.2
 
     repeat
 
 image boo happy talking:
     "boo happy"
     talk_low
-    pause 0.1
+    pause 0.3
     "boo happy talk"
     talk_bob
-    pause 0.1
+    pause 0.2
 
     repeat
 
 image boo worried talking:
     "boo worried"
     talk_low
-    pause 0.1
+    pause 0.3
     "boo worried talk"
     talk_bob
-    pause 0.1
+    pause 0.2
 
     repeat
 
@@ -99,25 +125,25 @@ init -1 python:
 
 image mummy normal talking:
     "mummy normal"
-    pause 0.1
+    pause 0.3
     "mummy normal talk"
-    pause 0.1
+    pause 0.2
 
     repeat
 
 image mummy happy talking:
     "mummy happy"
-    pause 0.1
+    pause 0.3
     "mummy happy talk"
-    pause 0.1
+    pause 0.2
 
     repeat
 
 image mummy sad talking:
     "mummy worried"
-    pause 0.1
+    pause 0.3
     "mummy worried talk"
-    pause 0.1
+    pause 0.2
 
     repeat
 
@@ -129,6 +155,35 @@ init -1 python:
     def tulip_lip_flap(event, **kwargs):
         lip_flap("tulip", event, **kwargs)
 
+image tulip normal talking:
+    "tulip normal"
+    talk_low
+    pause 0.3
+    "tulip normal talk"
+    talk_bob
+    pause 0.2
+
+    repeat
+
+image tulip happy talking:
+    "tulip happy"
+    talk_low
+    pause 0.3
+    "tulip happy talk"
+    talk_bob
+    pause 0.2
+
+    repeat
+
+image tulip worried talking:
+    "tulip worried"
+    talk_low
+    pause 0.3
+    "tulip worried talk"
+    talk_bob
+    pause 0.2
+
+    repeat
 
 define tul = Character("Tulip", callback=tulip_lip_flap, image="tulip")
 
@@ -137,6 +192,35 @@ init -1 python:
     def daisy_lip_flap(event, **kwargs):
         lip_flap("daisy", event, **kwargs)
 
+image daisy normal talking:
+    "daisy normal"
+    talk_low
+    pause 0.3
+    "daisy normal talk"
+    talk_bob
+    pause 0.2
+
+    repeat
+
+image daisy happy talking:
+    "daisy happy"
+    talk_low
+    pause 0.3
+    "daisy happy talk"
+    talk_bob
+    pause 0.2
+
+    repeat
+
+image daisy worried talking:
+    "daisy worried"
+    talk_low
+    pause 0.3
+    "daisy worried talk"
+    talk_bob
+    pause 0.2
+
+    repeat
 define dsy = Character("Daisy", callback=daisy_lip_flap, image="daisy")
 
 
@@ -144,6 +228,15 @@ init -1 python:
     def cheddar_lip_flap(event, **kwargs):
         lip_flap("cheddar", event, **kwargs)
 
+image cheddar normal talking:
+    "cheddar normal"
+    talk_low
+    pause 0.3
+    "cheddar normal talk"
+    talk_bob
+    pause 0.2
+
+    repeat
 define cdr = Character("Cheddar", callback=cheddar_lip_flap, image="daisy")
 
 

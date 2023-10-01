@@ -12,18 +12,23 @@ label intro:
     scene black with dissolve
     play music "audio/StarlightSolitude.mp3" loop
     #show cg one with dissolve
-    #Note to self: Show ghosts and ghouls dancing in the city 
-    "{i}Legends whisper of a Monster Masquerade, held every Halloween eve in the heart of Spectre city.{/i}"  
+    #Note to self: Show ghosts and ghouls dancing in the city
+    voice "audio/Narrator_0_1.wav"
+    "{i}Legends whisper of a Monster Masquerade, held every Halloween eve in the heart of Spectre city.{/i}"
+    voice "audio/Narrator_0_2.wav"
     "{i}It welcomes lost souls of every kind, living or dead.{/i}"
 
     #show cg two with dissolve
     #Note to self: Show Boo getting an inviation 
+    voice "audio/Narrator_0_3.wav"
     "{i}Strangers share secrets over drinks, as music stirs their spirits and sets their inhibitions free.{/i}"
+    voice "audio/Narrator_0_4.wav"
     "{i}Under a mask, {w=0.25}any creature can bare its soul without fear of retribution.{w=0.25} This ball is said to change your undead life forever!{/i}"
 
     #show cg three with dissolve
     #Note to self: Show Boo walking in the night
     # "[player_name]" "Uh, {w=0.25}I'm just looking for a fun night out to support my girl, Daisy.{p=0.25}She's performing!"
+    voice "audio/Narrator_0_5.wav"
     "But will it change the fate of our phantom protagonist for better{w=0.25} or for worse?"
 
     jump .city_walk
@@ -310,6 +315,6 @@ label enter_party:
     scene bg stairs_debug with fade
 
     "{i}Finally, we made it to the party. All manner of monsters meanders about. It's a night for meeting new souls—{/i}"
-    tulip normal "Hey Boo! Over here!"
+    "Tulip" "Hey Boo! Over here!"
     "{i}Ah! It’s your friend Tulip.{/i}"
     jump chapter_1

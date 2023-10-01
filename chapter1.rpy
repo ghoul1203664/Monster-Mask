@@ -4,19 +4,26 @@ label chapter_1:
 
     scene bg stairs_debug with fade
 
-
-    show tulip normal with dissolve:
-        anchor (0.5, 1.0)
-        pos(0.2, 1.0)
+    show tulip normal at left, tulip_size, tulip_face_left with dissolve:
+    #This
     tul "How it goin’ girl?{w=0.25} Glad that you made it."
 
-    show daisy worried with dissolve:
-        anchor (0.5, 1.0)
+    show tulip:
+        tulip_size
+        pos(0.2, 1.0)
+        tulip_face_left
+
+    show daisy worried at right, daisy_size, daisy_face_left with dissolve: 
+        daisy_size    
         pos(0.8, 1.0)
+        
     dsy worried "Yeah,{w=0.25} we were getting worried!"
     
-    show boo normal at center with dissolve:
+    show boo normal at center, boo_size with dissolve:
         boo_size
+        pause 0.5
+        boo_face_left
+        pause 0.5
     
     b "Sorry for the wait!{w=0.25} I got lost on the way,{w=0.25} and almost dropped a piece of the map!" 
     
@@ -34,10 +41,12 @@ label chapter_1:
         pos(0.3, 1.0)
     with ease
 
-    "Daisy" "Hello,{w=0.25} hope you’re all having a spoOOOooOOOoktacular night!{w=0.25} We're the Prime-Ribs{w=0.25} and we’ll be presenting a very fun set called Fruity Call!"
+    "Daisy" "Hello,{w=0.25} hope you’re all having a spoOOOooOOOoktacular night!{w=0.25} We're the Prime-Ribs{w=0.25} and we’ll be presenting a very fun set called Fruit Phone!"
     play music "audio/FruitPhone1.mp3" loop
 
-    tul curious "So, {w=0.25}whatcha been up to lately?"
+    tul normal "So, {w=0.25}whatcha been up to lately?"
+
+
     
     menu:
         "Tulip picks up the menu and scans for any dishes she might want to try.{w=0.25} She glances at you,{w=0.25} awaiting your reply."
@@ -73,16 +82,17 @@ label chapter_1:
 
             b normal "Oooh,{w=0.25} sounds exciting!"
 
-
     show boo:
         pos(0.8, 1.0)
     show tulip:
         pos(0.2, 1.0)
     with ease
     
-    show cheddar with dissolve
+    show cheddar normal at center, cheddar_size, cheddar_face_left with dissolve:
+
     cdr "Excuse me!{w=0.25} Are you two ladies ready to order?"
-   
+  
+
     b "O-{w=0.25}oh!{w=0.25} Yeah,{w=0.25} I’m ready!"
     "[player_name]" "{i}Oh no… {w=0.25}I didn’t even pick up the menu…{w=0.25} what do I do?!?!{/i}"
 
@@ -145,8 +155,10 @@ label chapter_1:
     voice "audio/Lupin_1_1.mp3"
     "????" "Heya,{w=0.25} mind if I sit here?"
     
+    voice "audio/Lophii_1_1.wav"
+    "????" "Room for one more?"
+
+    
+
+   
     return
-
-    mor "Room for one more?"
-
-    tul "Yeah sure!"
