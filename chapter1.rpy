@@ -5,7 +5,7 @@ label chapter_1:
     scene bg stairs_debug with fade
 
     show tulip normal at left, tulip_size, tulip_face_left with dissolve:
-    #This
+    #No voice lines 
     tul "How it goin’ girl?{w=0.25} Glad that you made it."
 
     show tulip:
@@ -17,7 +17,7 @@ label chapter_1:
         daisy_size    
         pos(0.8, 1.0)
         
-    dsy worried "Yeah,{w=0.25} we were getting worried!"
+    dsy worried "Yeah, we were getting worried!"
     
     show boo normal at center, boo_size with dissolve:
         boo_size
@@ -25,25 +25,36 @@ label chapter_1:
         boo_face_left
         pause 0.5
     
+
     b "Sorry for the wait!{w=0.25} I got lost on the way,{w=0.25} and almost dropped a piece of the map!" 
     
     tul "It’s chill.{w=0.25} You made it just in time to see Daisy perform!{w=0.25}Ooo I’m so hyped to see what she’s been cookin all these months!"
 
-    dsy happy "Speaking of that,{w=0.25} I gotta check on the boys.{w=0.25} Marrow isn’t here yet and we’re running out of time.{w=0.25} I’ll see you all later!"
+    show boo:
+        boo_size
 
+    dsy happy "Speaking of that,{w=0.25} I gotta check on the boys.{w=0.25} Marrow isn’t here yet and we’re running out of time.{w=0.25} I’ll see you all later!"
+  
+    voice "audio/Boo_1_2.mp3"
     b "Alright,{w=0.25} break a leg!"
+    voice "audio/Daisy_1_2.mp3"
+    dsy happy "Thanks!"
 
     hide daisy with dissolve
 
     show boo:
         pos(0.7, 1.0)
+        boo_face_left
     show tulip:
         pos(0.3, 1.0)
     with ease
-
-    "Daisy" "Hello,{w=0.25} hope you’re all having a spoOOOooOOOoktacular night!{w=0.25} We're the Prime-Ribs{w=0.25} and we’ll be presenting a very fun set called Fruit Phone!"
+    voice "audio/Daisy_1_3.mp3"
+    "Daisy" "Hello,{w=0.25} hope you’re all having a spooktacular time tonight night!"
+    voice "audio/Daisy_1_4.mp3"
+    "Daisy" "We're the Prime-Ribs and we’ll be presenting a very fun set called: {w=0.25}  Fruit Phone!"
     play music "audio/FruitPhone1.mp3" loop
-
+    pause 1.5
+    voice "audio/Tulip_1_4.wav"
     tul normal "So, {w=0.25}whatcha been up to lately?"
 
 
@@ -54,7 +65,7 @@ label chapter_1:
         "Not much.":
             b normal "Just getting ready for the ball."
             b worried "I did hear a strange noise today {w=0.25} and I thought it was another exterminator on the hunt."
-            
+            voice "audio/Tulip_1_5.wav"
             tul concerned "Oh no!"
            
             b normal "It was a false alarm,{w=0.25} just some kids in  costumes looking for a spooky place to check out."
@@ -155,7 +166,7 @@ label chapter_1:
     voice "audio/Lupin_1_1.mp3"
     "????" "Heya,{w=0.25} mind if I sit here?"
     
-    voice "audio/Lophii_1_1.wav"
+    voice "audio/Lophii_1_1.mp3"
     "????" "Room for one more?"
 
     

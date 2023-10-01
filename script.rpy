@@ -9,6 +9,8 @@ label start:
 
 
 label intro:
+    movie_cutscene("Splashscreen1.mp4")
+
     scene black with dissolve
     play music "audio/StarlightSolitude.mp3" loop
     #show cg one with dissolve
@@ -43,7 +45,7 @@ label .city_walk:
 
     show boo normal at center, boo_size, boo_face_left with dissolve
     # play sound "walk.ogg"
-    voice "audio/Boo_0_1.wav"    
+    voice "audio/Boo_0_1.mp3"
     b "I think this is the right place…"
  
     show boo:
@@ -51,15 +53,15 @@ label .city_walk:
         pause 0.5
         boo_face_left
         pause 0.5
-    voice "audio/Boo_0_1_1.wav" 
-    extend "Who sends a broken map in an invitation,{w=0.25} anyways?"
+    voice "audio/Boo_0_1_1.mp3"
+    b "Who sends a broken map in an invitation?"
     "{i}The map pieces fall out and scatter on the floor,{w=0.25} you pick up each piece and begin to solve the puzzle.{/i}"
     "{i}With careful effort,{w=0.25} you are able to re-construct the map to find the location of the party!{/i}"
 
     # call screen scr_map_minigame
-    voice "audio/Boo_0_3.wav"   
+    voice "audio/Boo_0_3.mp3"
     b happy "Phew,That wasn't so bad!"
-
+    
     jump reception
 
 
@@ -129,7 +131,6 @@ label reception:
     with dissolve
 
 
-    b "Phew!{w=0.25} Made it!"
     b "Now,{w=0.25} where should I go next?" # this line is supposed to cue the player to click on something, can be changed
     
     # make boo dissapear
@@ -169,22 +170,26 @@ label .checking_in:
     show mummy normal at mummy_size, mummy_face_right:
         pos(0.25, 1.0)
     with dissolve
-    voice "audio/Boo_0_4.wav"   
+    voice "audio/Boo_0_4.mp3"   
     b "Hello,{w=0.25} I’m Boo and...{w=0.25} I’m here for the party?"
-    voice "audio/Maat_0_1.wav"   
-    mum "Haha,{w=0.25} You're our first Boo of the night."
-    voice "audio/Maat_0_2.wav"   
+    voice "audio/Maat_0_1.mp3"   
+    mum "You're our first Boo of the night."
+    voice "audio/Maat_0_2.mp3"   
     mum happy "Ah!{w=0.25} Yes, I see your name,{w=0.25} and may I see your invitation?"
+    voice "audio/Boo_0_5.mp3"  
     b "Sure thing!"
 
 label .rename:
-
+    voice "audio/Maat_0_3.mp3" 
     mum normal "Did you want to go by a different name?{w=0.25} Boo is a bit vanilla."
+    voice "audio/Maat_0_4.mp3" 
     mum "You know the saying:{w=0.25} Whatever happens at the Monster Masquerade{w=0.25} stays at the Monster Masquerade.{w=0.25} Haha!"
+    voice "audio/Maat_0_5.mp3" 
     mum "But, that’s just an oldfolk’s tale.{w=0.25} You’re free to share your experiences on social media and whatnot!{w=0.25} This is the 21st century for crying out loud!"
 
 
     menu:
+
         "Would you like to change your name?"
 
         "Yes":
@@ -204,7 +209,7 @@ label .rename_input:
 
     default invalid_name = False
     $ invalid_name = False
-
+#Add audio files in for the next update
     if player_name.lower() == "booo":
         mum "Hm.{w=0.25} I suppose you never know where an extra o will take you."
     elif player_name.lower() == "boooo":
@@ -296,8 +301,9 @@ label .rename_input:
 
 
 label .rename_finished:
+    voice "audio/Maat_0_35.mp3"  
     mum "Everything checks out!{w=0.25} The entrance is the door to your right.{w=0.25} Have fun!"
-    voice "audio/Boo_0_6.wav"   
+    voice "audio/Boo_0_6.mp3"   
     b "Thank you!"
     # mum "Oh!{w=0.25} One more thing.{w=0.25} Take this."
 
@@ -319,6 +325,8 @@ label .rename_finished:
     
 label enter_party:
     scene bg stairs_debug with fade
+    play sound "audio/crowd.mp3" loop
+
 
     "{i}Finally, we made it to the party. All manner of monsters meanders about. It's a night for meeting new souls—{/i}"
     "Tulip" "Hey Boo! Over here!"
