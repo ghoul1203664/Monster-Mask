@@ -21,12 +21,12 @@ transform boo_face_left:
 
 transform tulip_size:
     character_anchor
-    xsize (1500*3/10)
-    ysize (2800*3/10)
+    xsize (1215*3/10)
+    ysize (2900*3/10)
 
 transform tulip_face_left:
     tulip_size
-    xsize -(1500*3/10)
+    xsize -(1215*3/10)
 
 transform daisy_size:
     character_anchor

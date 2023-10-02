@@ -92,22 +92,30 @@ label chapter_1:
             b worried "Haha..."
         
         "A lot.":
+            voice "audio/Boo_1_7.mp3" 
             b normal "I had sooo much to do today. You should see how I decorated the mansion!"
+            voice "audio/Boo_1_8.mp3"
             b happy "I really tried to work on my jumscare face this season, but it was a total flop…"
+            voice "audio/Boo_1_9.mp3" 
             b normal "I’ve just been up to so many last-minute things!!  I wish Biggs and Buggs had planned better.."
+            voice "audio/Boo_1_10.mp3" 
             b happy "But!{w=0.25}  Good thing I found these new shoes just in time for the party"
+            voice "audio/Boo_1_11.mp3"
             b happy "Oh,{w=0.25} and my blog also just reached it’s first anniversary!"
-            
-            tul happy "You should write about us after,{w=0.25} you busy bee!{w=0.25} I’m happy to see you buzzing with excitement over all the thing things you do."
+            voice "audio/Tulip_1_7.mp3"             
+            tul happy "Yeah!{w=0.25}You should write about us after,{w=0.25} you busy bee!{w=0.25} I’m happy to see you buzzing with excitement over all the thing things you do."
+            voice "audio/Tulip_1_8.mp3"
             tul "But take a break sometimes.{w=0.25} Who knows,{w=0.25} you might die twice because of stress!"
             
+            voice "audio/Boo_1_12.mp3"
             b worried "Haha,{w=0.25} yeah."
+            voice "audio/Boo_1_12_2.mp3"
             "[player_name]" "{i}YOU CAN DIE TWICE??{/i}" # hard coded name so mouth doesn't move
 
             tul normal "It’s been kinda wild on my side too,{w=0.25} preparing for the holidays."
             tul worried "I know,{w=0.25} I know.{w=0.25} It’s still spooky season{w=0.25} but we musicians need to get ready EARLY for the biggest event of the year. "
             tul "It’s never too early to start learning new holiday jingles and to rehearse the classics!"
-
+            voice "audio/Boo_1_13.mp3"
             b normal "Oooh,{w=0.25} sounds exciting!"
 
     show boo:
@@ -117,11 +125,12 @@ label chapter_1:
     with ease
     
     show cheddar normal at center, cheddar_size, cheddar_face_left with dissolve:
-
+     voice "audio/Cheddar_1_1.mp3"
     cdr "Excuse me!{w=0.25} Are you two ladies ready to order?"
   
-
+    voice "audio/Boo_1_14.mp3"
     b "O-{w=0.25}oh!{w=0.25} Yeah,{w=0.25} I’m ready!"
+    voice "audio/Boo_1_14_2.mp3"
     "[player_name]" "{i}Oh no… {w=0.25}I didn’t even pick up the menu…{w=0.25} what do I do?!?!{/i}"
 
     tul "I’ll get the spaghetti and eyeballs."
