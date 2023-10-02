@@ -9,10 +9,12 @@ label start:
 
 
 label intro:
-    movie_cutscene("Splashscreen1.mp4")
+    $renpy.movie_cutscene("Splashscreen.mpg")
 
     scene black with dissolve
     play music "audio/StarlightSolitude.mp3" loop
+
+    
     #show cg one with dissolve
     #Note to self: Show ghosts and ghouls dancing in the city
     voice "audio/Narrator_0_1.wav"
@@ -85,8 +87,8 @@ screen reception_point_n_click_mummy:
     imagebutton:
         xanchor 0.5
         yanchor 1.0
-        xpos 574
-        ypos 813
+        xpos 450
+        ypos 965
         action Jump("reception.checking_in")
         idle "pnc/pnc_reception_mummy.png"
         hover "pnc_reception_mummy_hover"
@@ -95,8 +97,9 @@ screen reception_point_n_click_painting:
     imagebutton:
         xanchor 0.5
         yanchor 0.5
-        xpos 259 + 639 / 2 # adjusted based on image width
-        ypos 57 + 413 / 2
+
+        xpos 420
+        ypos 480
         action Jump("reception.inspecting_painting")
         idle "pnc/pnc_reception_painting.png"
         hover "pnc_reception_painting_hover"
@@ -105,8 +108,8 @@ screen reception_point_n_click_door:
     imagebutton:
         xanchor 0.5
         yanchor 1.0
-        xpos 1248 + 517 / 2 # adjusted based on image width
-        ypos 234 + 519
+        xpos 1108
+        ypos 880
         action Jump("reception.inspecting_door")
         idle "pnc/pnc_reception_door.png"
         hover "pnc_reception_door_hover"
@@ -329,6 +332,7 @@ label enter_party:
 
 
     "{i}Finally, we made it to the party. All manner of monsters meanders about. It's a night for meeting new souls—{/i}"
+    voice "audio/Tulip_0_1.mp3"
     "Tulip" "Hey Boo! Over here!"
     "{i}Ah! It’s your friend Tulip.{/i}"
     jump chapter_1

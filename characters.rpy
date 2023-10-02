@@ -58,12 +58,7 @@ transform mummy_face_right:
     xsize -(301*2)
 
 
-transform talk_bob:
-    linear 0.1 yoffset 0
-    repeat
 
-transform talk_low:
-    linear 0.1 yoffset 0
 
 
 # Character definition for Player (Boo)
@@ -83,32 +78,26 @@ init -1 python:
         lip_flap("boo", event, **kwargs)
 
 image boo normal talking:
-    "boo normal"
-    talk_low
-    pause 0.3
     "boo normal talk"
-    talk_bob
-    pause 0.2
+    pause 0.1
+    "boo normal"
+    pause 0.1
 
     repeat
 
 image boo happy talking:
-    "boo happy"
-    talk_low
-    pause 0.3
     "boo happy talk"
-    talk_bob
-    pause 0.2
+    pause 0.1
+    "boo happy"
+    pause 0.1
 
     repeat
 
 image boo worried talking:
-    "boo worried"
-    talk_low
-    pause 0.3
     "boo worried talk"
-    talk_bob
-    pause 0.2
+    pause 0.1
+    "boo worried"
+    pause 0.1
 
     repeat
 
@@ -124,26 +113,26 @@ init -1 python:
         lip_flap("mummy", event, **kwargs)
 
 image mummy normal talking:
-    "mummy normal"
-    pause 0.3
     "mummy normal talk"
-    pause 0.2
+    pause 0.1
+    "mummy normal"
+    pause 0.1
 
     repeat
 
 image mummy happy talking:
-    "mummy happy"
-    pause 0.3
     "mummy happy talk"
-    pause 0.2
+    pause 0.1
+    "mummy happy"
+    pause 0.1
 
     repeat
 
 image mummy sad talking:
-    "mummy worried"
-    pause 0.3
     "mummy worried talk"
-    pause 0.2
+    pause 0.1
+    "mummy worried"
+    pause 0.1
 
     repeat
 
@@ -156,32 +145,32 @@ init -1 python:
         lip_flap("tulip", event, **kwargs)
 
 image tulip normal talking:
-    "tulip normal"
-    talk_low
-    pause 0.3
     "tulip normal talk"
-    talk_bob
-    pause 0.2
+    
+    pause 0.1
+    "tulip normal"
+    
+    pause 0.1
 
     repeat
 
 image tulip happy talking:
-    "tulip happy"
-    talk_low
-    pause 0.3
     "tulip happy talk"
-    talk_bob
-    pause 0.2
+    
+    pause 0.1
+    "tulip happy"
+    
+    pause 0.1
 
     repeat
 
 image tulip worried talking:
-    "tulip worried"
-    talk_low
-    pause 0.3
     "tulip worried talk"
-    talk_bob
-    pause 0.2
+    
+    pause 0.1
+    "tulip worried"
+    
+    pause 0.1
 
     repeat
 
@@ -193,32 +182,32 @@ init -1 python:
         lip_flap("daisy", event, **kwargs)
 
 image daisy normal talking:
-    "daisy normal"
-    talk_low
-    pause 0.3
     "daisy normal talk"
-    talk_bob
-    pause 0.2
+    
+    pause 0.1
+    "daisy normal"
+    
+    pause 0.1
 
     repeat
 
 image daisy happy talking:
-    "daisy happy"
-    talk_low
-    pause 0.3
     "daisy happy talk"
-    talk_bob
-    pause 0.2
+    
+    pause 0.1
+    "daisy happy"
+    
+    pause 0.1
 
     repeat
 
 image daisy worried talking:
-    "daisy worried"
-    talk_low
-    pause 0.3
     "daisy worried talk"
-    talk_bob
-    pause 0.2
+    
+    pause 0.1
+    "daisy worried"
+    
+    pause 0.1
 
     repeat
 define dsy = Character("Daisy", callback=daisy_lip_flap, image="daisy")
@@ -229,12 +218,12 @@ init -1 python:
         lip_flap("cheddar", event, **kwargs)
 
 image cheddar normal talking:
-    "cheddar normal"
-    talk_low
-    pause 0.3
     "cheddar normal talk"
-    talk_bob
-    pause 0.2
+    
+    pause 0.1
+    "cheddar normal"
+    
+    pause 0.1
 
     repeat
 define cdr = Character("Cheddar", callback=cheddar_lip_flap, image="daisy")
