@@ -30,12 +30,13 @@ transform tulip_face_left:
 
 transform daisy_size:
     character_anchor
-    xsize (1500*3/10)
-    ysize (2800*3/10)
+
+    xsize (1907*3/10)
+    ysize (2900*3/10)
 
 transform daisy_face_left:
     daisy_size
-    xsize -(1500*3/10)
+    xsize -(1907*3/10)
 
 transform cheddar_size:
     character_anchor

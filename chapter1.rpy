@@ -86,7 +86,7 @@ label chapter_1:
             tul worried "Oh no!"
             voice "audio/Boo_1_5.mp3"
             b normal "It was a false alarm,{w=0.25} just some kids in  costumes looking for a spooky place to check out."
-           
+            voice "audio/Tulip_1_6.mp3"
             tul normal "Betcha they were just- {w=0.25} too scared of how awesome you are. Ya know?"
             voice "audio/Boo_1_6.mp3"           
             b worried "Haha..."
