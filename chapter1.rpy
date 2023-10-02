@@ -108,15 +108,19 @@ label chapter_1:
             tul "But take a break sometimes.{w=0.25} Who knows,{w=0.25} you might die twice because of stress!"
             
             voice "audio/Boo_1_12.mp3"
-            b worried "Haha,{w=0.25} yeah."
+            b happy "Haha,{w=0.25} yeah."
             voice "audio/Boo_1_12_2.mp3"
             "[player_name]" "{i}YOU CAN DIE TWICE??{/i}" # hard coded name so mouth doesn't move
-
+            voice "audio/Tulip_1_9.mp3"
             tul normal "It’s been kinda wild on my side too,{w=0.25} preparing for the holidays."
+            voice "audio/Tulip_1_10.mp3"
             tul worried "I know,{w=0.25} I know.{w=0.25} It’s still spooky season{w=0.25} but we musicians need to get ready EARLY for the biggest event of the year. "
-            tul "It’s never too early to start learning new holiday jingles and to rehearse the classics!"
+            voice "audio/Tulip_1_11.mp3"  
+            tul happy "It's like I always say. It's never too early to learn new jingles but never too late to relearn old classics!"
+            voice "audio/Tulip_1_12.mp3"
+            tul normal "And that was supposed to rhyme but ya know, that's okay."
             voice "audio/Boo_1_13.mp3"
-            b normal "Oooh,{w=0.25} sounds exciting!"
+            b happy "Oooh,{w=0.25} sounds exciting!"
 
     show boo:
         pos(0.8, 1.0)
@@ -129,62 +133,73 @@ label chapter_1:
     cdr "Excuse me!{w=0.25} Are you two ladies ready to order?"
   
     voice "audio/Boo_1_14.mp3"
-    b "O-{w=0.25}oh!{w=0.25} Yeah,{w=0.25} I’m ready!"
+    b normal "O-{w=0.25}oh!{w=0.25} Yeah,{w=0.25} I’m ready!"
+    pause 1
+    b worried "..."
     voice "audio/Boo_1_14_2.mp3"
     "[player_name]" "{i}Oh no… {w=0.25}I didn’t even pick up the menu…{w=0.25} what do I do?!?!{/i}"
-
-    tul "I’ll get the spaghetti and eyeballs."
+    voice "audio/Tulip_1_13.mp3"
+    tul normal "I’ll get the spaghetti and eyeballs."
 
     # TODO: make cheddar turn to look at boo's sprite here
+    voice"audio/Cheddar_1_2.mp3"
     cdr "Alright,{w=0.25} and how about you?"
 
-    b "{cps=30}Uh...{w=0.25} I'll have...{/cps}"
+    voice "audio/Boo_1_15.mp3"
+    b normal "{cps=30}Uh...{w=0.25} I'll have...{/cps}"
+    voice "audio/Boo_1_15_2.mp3"
     "[player_name]" "{i}These all look so tasty!{w=0.25} I wish I could order them all!{w=0.25} But I still get phantom fullness when I eat too much...{/i}"
 
     menu:
         "Chef’s Recommendation":
-            b "H-{w=0.25}Hm…{w=0.25} I don’t know what to choose exactly…{w=0.25} There’s just so many options!{w=0.25} Do you have a,{w=0.25} um…{w=0.25} favorite dish perhaps??"
-
+            voice "audio/Boo_1_16.mp3"
+            b "Hmmm…{w=0.25} I don’t know what to choose exactly…{w=0.25} There’s just so many options!{w=0.25} Do you have a,{w=0.25} um…{w=0.25} favorite dish perhaps??"
+            voice"audio/Cheddar_1_3.mp3"
             cdr " Why yes we do!{w=0.25} I highly suggest the Witches Brew.{w=0.25} with has potatoes,{w=0.25} carrots,{w=0.25} broccoli,{w=0.25} and marigolds."
-
+            voice"audio/Boo_1_17.mp3"
             b "Ohh,{w=0.25} That sounds wonderful.{w=0.25} I’d love to have that!"
-
+            voice"audio/Cheddar_1_4.mp3"
             cdr "Alrighty-o!{w=0.25} Coming right up."
 
 
         "Make something up":
+            voice"audio/Boo_1_18.mp3"
+
             b "ummmm… {w=0.25}Can I get the…{w=0.25} Cheddar Goblin meal?"
 
             cdr "…"
-
+            voice"audio/Cheddar_1_5.mp3"
             cdr "{i}The kids menu one?{/i}{w=0.25} The one that comes with the Mac n’cheese,{w=0.25} shark drink,{w=0.25} and ghost nuggets?"
-
+            voice"audio/Boo_1_19.mp3"
             b "Yes."
+            voice"audio/Boo_1_19_2.mp3"
             "[player_name]" "That's a real dish?!"
-
+            voice"audio/Cheddar_1_6.mp3"
             cdr "Perfect!!"
 
             # add some sort of shsake to show shock here
-
+            voice"audio/Cheddar_1_7.mp3"
             cdr "That’s one of my many recommendations!{w=0.25} I’ll get your food ready soon!"
 
 
         "Quickly glance at the menu":
+            voice"audio/Boo_1_20.mp3"
             b "Lemme get the um-"
             
             "{i}You pick up the menu and skim through the dishes as quickly as possible,{w=0.25} not wanting to keep the others waiting.{/i}"
+            voice"audio/Cheddar_1_8.mp3"
 
             cdr "Do you,{w=0.25} uh,{w=0.25} do you need more time?"
-
+            voice "audio/Tulip_1_14.mp3"
             tul "Yeah,{w=0.25} no rush Boo,{w=0.25} it’s okay!"
-
             "{i}But you're determined to order at once.{/i}"
-
+            voice"audio/Boo_1_21.mp3"
             b "Nono!{w=0.25} I got it!{w=0.25} I got it!{w=0.25} I’ll get the Spider-Pan Pizza and the Bloody Mary to drink."
-
+            voice"audio/Cheddar_1_9.mp3"
             cdr "Okay!{w=0.25} Your food will be ready shortly!"
-    
+    voice "audio/Boo_1_22.mp3"    
     b "Thank you!"
+    voice "audio/Boo_1_22_2.mp3"    
     "[player_name]" "Phew… Close call."
 
     scene black with dissolve
@@ -193,7 +208,7 @@ label chapter_1:
     "????" "Heya,{w=0.25} mind if I sit here?"
     
     voice "audio/Lophii_1_1.mp3"
-    "????" "Room for one more?"
+    "???" "Room for one more?"
 
     
 
