@@ -20,7 +20,8 @@ label chapter_1:
     show daisy worried at right, daisy_size, daisy_face_left with dissolve: 
         daisy_size    
         pos(0.7, 1.0)
-        
+    
+    voice "audio/Daisy_1_1.mp3"       
     dsy worried "Yeah, we were getting worried!"
     
     show boo normal at center, boo_size with dissolve:
@@ -37,6 +38,7 @@ label chapter_1:
     show boo:
         boo_size
 
+    voice "audio/Daisy_1_2_2.mp3"       
     dsy happy "Speaking of that,{w=0.25} I gotta check on the boys.{w=0.25} Marrow isn’t here yet and we’re running out of time.{w=0.25} I’ll see you all later!"
   
     voice "audio/Boo_1_2.mp3"
