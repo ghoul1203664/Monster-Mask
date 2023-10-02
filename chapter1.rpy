@@ -125,7 +125,7 @@ label chapter_1:
     with ease
     
     show cheddar normal at center, cheddar_size, cheddar_face_left with dissolve:
-     voice "audio/Cheddar_1_1.mp3"
+    voice "audio/Cheddar_1_1.mp3"
     cdr "Excuse me!{w=0.25} Are you two ladies ready to order?"
   
     voice "audio/Boo_1_14.mp3"
