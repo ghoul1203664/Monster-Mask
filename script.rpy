@@ -45,12 +45,12 @@ label .city_walk:
 
     play music "audio/NightWalk.mp3" loop
 
-    show boo normal at center, boo_size, boo_face_left with dissolve
+    show boo normal at center, boo_size, boo_face_left with dissolve #combining preset anims and sizes
     # play sound "walk.ogg"
     voice "audio/Boo_0_1.mp3"
     b "I think this is the right place…"
  
-    show boo:
+    show boo: #one time animations
         boo_size
         pause 0.5
         boo_face_left

@@ -1,5 +1,7 @@
 # Custom Transforms
 # one for when characters go offscreen vertically
+
+#if add new character "Def line" goes last = 
 transform fall_offscreen:
     parallel:
         ease 0.3 yalign 1.0
@@ -103,7 +105,7 @@ image boo worried talking:
     repeat
 
 
-
+#def of character - in scripts/chapters do after 
 default player_name = "Boo"
 define b = Character("[player_name]", callback=boo_lip_flap, image="boo")
 
