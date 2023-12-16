@@ -108,7 +108,6 @@ label chapter_1:
             tul happy "Yeah!{w=0.25}You should write about us after,{w=0.25} you busy bee!{w=0.25} I’m happy to see you buzzing with excitement over all the thing things you do."
             voice "audio/Tulip_1_8.mp3"
             tul "But take a break sometimes.{w=0.25} Who knows,{w=0.25} you might die twice because of stress!"
-            
             voice "audio/Boo_1_12.mp3"
             b happy "Haha,{w=0.25} yeah."
             voice "audio/Boo_1_12_2.mp3"
@@ -202,6 +201,7 @@ label chapter_1:
     voice "audio/Boo_1_22.mp3"    
     b "Thank you!"
     voice "audio/Boo_1_22_2.mp3"    
+    #invisable version 
     "[player_name]" "Phew… Close call."
 
     scene black with dissolve
@@ -212,7 +212,63 @@ label chapter_1:
     voice "audio/Lophii_1_1.mp3"
     "???" "Room for one more?"
 
-    
+    scene bg tabletalk with fade
 
+
+    #show lophii happy at left, lophii_size with dissolve:
+    #    pos(0.3, 1.0)
+    #show lupin normal at left, lupin_size with dissolve:
+    #    pos(0.4, 1.0)
+
+    #lophii happy "Nice weather we have today"
+    
+    #lup normal "I don't think there's any weather lol."
+    
+    "[player_name]" "{i}I guess I'll have to start making conversation.'{/i}"
+
+    menu:
+        "It's time to make conversation!'"
+        
+        "Wolf Guy":
+            "{i}You attempt to start a conversation but static fuzz fills your mind.'{/i}"  
+            "Tulip" "I love your cape. {w=0.25}What's the inspiration for your outfit?"
+            "??" "Oh, {w=0.25} Uh- {w=0.25} Well, my theme is \"Shadow Tuxedos\" which is based on 80s anime and a famous opera."
+            "Tulip" "Are you a Sailing Crescent fan?"
+            "??" "Yeah… {w=0.25}it holds a special place in my big meaty heart."
+            "Tulip" "Hmmm.. {w=0.25}if it's not too intruding. {w=0.25}Are you going for a silent solitary hiding in the dark persona"
+            "??" "I do like to sing at night."
+            "??" "That’s nice! {w=0.25}I like sing in the shower..."
+            "??" "That's so real. {w=0.25}The acoustics in there are great. But nothing is letting yourself go in an open space where you can see the stars..."
+            "{i}You overcome your static fuzz and your mind clears{/i}"  
+            "[player_name]" "What's uh-'{w=0.25}what's your name? Not your real one... {w=0.25} Unless that's the name you chose for the night."
+            "[player_name]" "{i}Why am I being so awkward??{/i}"
+            "Lupin" "Call me Lupin."
+            "[player_name]" "Like the amime?"
+            "Lupin" "Yeah. Thought I'd try it on for the night. How 'bout you? "
+            menu:
+                "[player_name]" "it's uhhh.."
+                "Forgot"
+                    "[player_name]" "uh-"
+                    "{i}Oh bother, seems like you forgot your name. No matter what you do you you can't find it for the life of you.'{/i}"  
+                    "[player_name]" "Call me Boo!"
+                    "Lupin" "is that your namem for the night?"
+                    "[player_name]" "Nah, I just forgot my own name haha."
+
+
+                "Forgar"
+ 
+            
+            
+                
+            "[player_name]" "I just realized it might be an unspoken rule that people don't usually say whether their names are real or not. Am I ruining the mystery??"
+
+
+
+
+        "Sea Monster":
+            "{i}You attempt to start a conversation but static fuzz fills your mind.'{/i}"  
+            "Tulip" "I love your cape. {w=0.25}What's the inspiration for your outfit?"
+            "Lupin" "Oh, {w=0.10} Uh- {w=0.10} Well, my theme is \"Shadow Tuxedos\""
+            
    
     return

@@ -60,8 +60,23 @@ transform mummy_face_right:
     mummy_size
     xsize -(301*2)
 
+transform lupin_size:
+    character_anchor
+    xsize (1500*3/10)
+    ysize (2800*3/10)
 
+transform lupin_face_left:
+    lupin_size
+    xsize -(1500*3/10)
 
+transform lophii_size:
+    character_anchor
+    xsize (1500*3/10)
+    ysize (2800*3/10)
+
+transform lophii_face_left:
+    lophi_size
+    xsize -(1500*3/10)
 
 
 # Character definition for Player (Boo)
@@ -229,10 +244,38 @@ image cheddar normal talking:
     pause 0.1
 
     repeat
-define cdr = Character("Cheddar", callback=cheddar_lip_flap, image="daisy")
+define cdr = Character("Cheddar", callback=cheddar_lip_flap, image="cheddar")
+
+init -1 python:
+    def lupin_lip_flap(event, **kwargs):
+        lip_flap("lupin", event, **kwargs)
+
+image lupin normal talking:
+    "lupin normal talk"
+    
+    pause 0.1
+    "lupin normal"
+    
+    pause 0.1
+
+    repeat
+
+define lup = Character("Lupin", callback=lupin_lip_flap, image="lupin")
+
+init -1 python:
+    def lophii_lip_flap(event, **kwargs):
+        lip_flap("lophii", event, **kwargs)
+
+image lophii happy talking:
+    "lophii happy talk"
+    
+    pause 0.1
+    "lophii happy"
+    
+    pause 0.1
+
+    repeat
 
 
-define lup = Character("Lupin", callback=cheddar_lip_flap, image="lupin")
+define lophii = Character("Lophii Morfs", callback=lophii_lip_flap, image="lophii")
 
-
-define mor = Character("Lophii Morfs", callback=cheddar_lip_flap, image="lophii")
