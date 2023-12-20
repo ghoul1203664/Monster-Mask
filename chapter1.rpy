@@ -214,30 +214,24 @@ label chapter_1:
 
     scene bg tabletalk with fade
 
-
-    #show lophii happy at left, lophii_size with dissolve:
-    #    pos(0.3, 1.0)
-    #show lupin normal at left, lupin_size with dissolve:
-    #    pos(0.4, 1.0)
-
-    #lophii happy "Nice weather we have today"
     
-    #lup normal "I don't think there's any weather lol."
+    
+    #Make a tag: to have the game load here
     
     "[player_name]" "{i}I guess I'll have to start making conversation.'{/i}"
 
     menu:
         "It's time to make conversation!'"
         
-        "Wolf Guy":
-            "{i}You attempt to start a conversation but static fuzz fills your mind.'{/i}"  
+        "Wolf Guy": #make tag here (Talk to Lupin)
+            "{i}You attempt to start a conversation but static fuzz fills your mind.{/i}"  
             "Tulip" "I love your cape. {w=0.25}What's the inspiration for your outfit?"
             "??" "Oh, {w=0.25} Uh- {w=0.25} Well, my theme is \"Shadow Tuxedos\" which is based on 80s anime and a famous opera."
             "Tulip" "Are you a Sailing Crescent fan?"
             "??" "Yeah… {w=0.25}it holds a special place in my big meaty heart."
-            "Tulip" "Hmmm.. {w=0.25}if it's not too intruding. {w=0.25}Are you going for a silent solitary hiding in the dark persona"
-            "??" "I do like to sing at night."
-            "??" "That’s nice! {w=0.25}I like sing in the shower..."
+            "Tulip" "Hmmm.. {w=0.25}if it's not too intruding. {w=0.25}Are you going for a silent solitary hiding in the dark persona?"
+            "??" "I don't know.{w=0.25}But I do like to sing at night."
+            "Tulip" "That’s nice! {w=0.25}I like to sing in the shower..."
             "??" "That's so real. {w=0.25}The acoustics in there are great. But nothing is letting yourself go in an open space where you can see the stars..."
             "{i}You overcome your static fuzz and your mind clears{/i}"  
             "[player_name]" "What's uh-'{w=0.25}what's your name? Not your real one... {w=0.25} Unless that's the name you chose for the night."
@@ -248,27 +242,105 @@ label chapter_1:
             menu:
                 "[player_name]" "it's uhhh.."
                 "Forgot"
-                    "[player_name]" "uh-"
-                    "{i}Oh bother, seems like you forgot your name. No matter what you do you you can't find it for the life of you.'{/i}"  
+                    "[player_name]" "um- call me Boo!"
                     "[player_name]" "Call me Boo!"
-                    "Lupin" "is that your namem for the night?"
+                    "Lupin" "is that your name for the night?"
                     "[player_name]" "Nah, I just forgot my own name haha."
 
 
                 "Forgar"
- 
-            
-            
-                
-            "[player_name]" "I just realized it might be an unspoken rule that people don't usually say whether their names are real or not. Am I ruining the mystery??"
+                    "[player_name]" "uh-"
+                    "{i}Oh bother, seems like you don't know weather you changed your name for the night or not. '{/i}" 
+                    "{i}You attempt to look for your tag but can't find it for the life of you'{/i}"  
+                    "{i}Well, the Unlife of you...{/i}"  
+                    "[player_name]" "It's Boo!"
+                    "Lupin" "is that your name for the night?"
+                    "[player_name]" "Nah, I just forgot my own name haha." 
+            "[player_name]" "{i}Wait- Did I just break some unspoken rule by asking his name??. Am I ruining the masqurade mystery??{/i}"
+
+        "Sea Monster": #make tag here (Talk to Lophii)
+            "{i}You attempt to start a conversation but static fuzz fills your mind.{/i}"  
+            "{i}However- you overcome it.{/i}"  
+            "[player_name]" "Hey- um! {w=0.25} I just wanted to say, that I love your outfit! " 
+            "???" "Thank you, it represents the depths of the sea and its many layers, thrumming with life... "
+            "[player_name]" "How poetic! I love that you put so much thought into it." 
+            "[player_name]" "I call my outfit \“Clear Night\” which is based on a classical piece called \“Starlight Solitude\”." 
+            "???" "What a lovely spin. You are a fan of music, then?"
+            "[player_name]" "Yes, {w=0.25}I'm here to support my friends! They are performing!"
+            "???" "I see.I am a student of the arts myself. {w=0.25}The name's Lophii by the way"
+            "[player_name]" "Mine's Boo! So {w=0.25}who made your dress?"
+            "Lophii" "I designed this dress myself to capture the beauty and feeling of the sea. I was born there and still think of it as home."
+            "[player_name]" "Wow… {w=0.25}that is wonderful! I did an ocean cleanup once."
+            "[player_name]" "{i}Wait- WHY DID I JUST SAY THAT?!{/i}"
+            "[player_name]" "{i}She probably doesn't want to be reminded of all the pollution...{/i}"
+            "[player_name]" "{i}Oh no she's looking... {w=0.25} I should say something!{/i}"
+            "[player_name]" "I uh!-" 
+
+    b "!!!" 
+    scene black with dissolve
+    #Crowd applud Soud effect and have it go back to the 
+    show bg daisy1 with fade
+    "[Daisy]" "We hope you enjoyed our first set!"
+    "[Daisy]" "We'll be back in 10 minutes."
+    #Walking sfx
+    scene bg stairs_debug with fade
+
+    tul normal "Omg, You did SO good."
+    b "Yeah!!" 
+
+    #if spoke to Lupin 
+        #You take a glance at the sea monster and see a name tag
+        #Lupin 
+    #if spoke to Lophii
+        #you take a glace at the werewolf and see his name tag
+
+    #show lophii happy at left, lophii_size with dissolve:
+    #    pos(0.3, 1.0)
+    #show lupin normal at left, lupin_size with dissolve:
+    #    pos(0.4, 1.0)
+
+
+    #lup normal "It's Really You! Daisy Bell in the Flesh! Hi {w=0.25}I am such a big fan of your work!! I still watch Sea Pirate Boogie (Anime Soundtrack 2000)"
+    #lup normal "Your work is absolutely phenomenal!"
+    #tul happy  "Oooo~ hello miss popular!"
+    #daisy normal "Haha It was nothing"
+    #lophii happy "I must say Miss Daisy, you''re incrediblly skilled a the violin. Which school did you attend?"
+    #lophii happy "Which school did you attened?"
+    #daisy normal "When I was alive? I got my bachlors at Yulevard School of Music but never got to finish my masters."
+    #lophii happy "Oh my stars...what an achievement"
+    #daisy normal "I gotta head back now, hope you guys enjoy the next set!""
+    b "wooo!"
+    tul happy "You go girl! YEAH!!"
+    b "{i}Phew...{w=0.25}Saved by the bell...{/i}"
+
+    scene black with dissolve
+
+    show bg daisy2 with fade
+    "[Daisy]" "And we’re back! I don't have a cool segway for this, but I think Kiwis are pretty nice! Don’t ya think?"
+    
+    scene black with dissolve
+#The crowd cheers sfx
+    "The next song begins with the next song being called Kiwis"
+    "You gain a slow realization that the entire set is based off the rainbow"
+    "Strawberry,Mango,Banana,Kiwi all correlate to the first four colors of the rainbow."
+    "It was brilliant! {w=0.25}You begin to critically think about the next song... what could the names possibly be?"
+    "You are lost deep in thought"
+   
+    show bg chef with fade
+    "[Chef]" "Here are your dishes!"
+    "[player_name]" "ACK!" 
+    "[Chef]" "Oh, {w=0.25}But who has which plate…{w=0.25} Hmm…"
+    "[Lupin]" "I forgot already. I don’t think I ordered anything."
+    "[Tulip]" "I think I had Spaghetti and meatballs?"
+
+#Second Minigame (Pancakes) Plays
 
 
 
+    show bg stairs2_debug with fade
 
-        "Sea Monster":
-            "{i}You attempt to start a conversation but static fuzz fills your mind.'{/i}"  
-            "Tulip" "I love your cape. {w=0.25}What's the inspiration for your outfit?"
-            "Lupin" "Oh, {w=0.10} Uh- {w=0.10} Well, my theme is \"Shadow Tuxedos\""
-            
+
+#daisy talking
+          
    
     return
