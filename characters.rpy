@@ -1,5 +1,7 @@
 # Custom Transforms
 # one for when characters go offscreen vertically
+
+#if add new character "Def line" goes last = 
 transform fall_offscreen:
     parallel:
         ease 0.3 yalign 1.0
@@ -18,6 +20,35 @@ transform boo_face_left:
     boo_size
     xsize -(1500*3/10)
 
+
+transform tulip_size:
+    character_anchor
+    xsize (1215*3/10)
+    ysize (2900*3/10)
+
+transform tulip_face_left:
+    tulip_size
+    xsize -(1215*3/10)
+
+transform daisy_size:
+    character_anchor
+
+    xsize (1907*3/10)
+    ysize (2900*3/10)
+
+transform daisy_face_left:
+    daisy_size
+    xsize -(1907*3/10)
+
+transform cheddar_size:
+    character_anchor
+    xsize (1500*3/10)
+    ysize (2800*3/10)
+
+transform cheddar_face_left:
+    cheddar_size
+    xsize -(1500*3/10)
+
 # got odd mummy image sizes in demo
 # please don't question it
 transform mummy_size:
@@ -29,33 +60,23 @@ transform mummy_face_right:
     mummy_size
     xsize -(301*2)
 
-
-transform talk_bob:
-    linear 0.1 yoffset 0
-    repeat
-
-transform talk_low:
-    linear 0.1 yoffset 0
-
-
-transform tul_dsy_size:
+transform lupin_size:
     character_anchor
-    xsize (1400*3/10)
-    ysize (2900*3/10)
+    xsize (1500*3/10)
+    ysize (2800*3/10)
 
-transform tul_dsy_face_left:
-    tul_dsy_size
-    xsize -(1400*3/10)
+transform lupin_face_left:
+    lupin_size
+    xsize -(1500*3/10)
 
-
-transform cheddar_size:
+transform lophii_size:
     character_anchor
-    xsize (1500*25/100)
-    ysize (2800*25/100)
+    xsize (1500*3/10)
+    ysize (2800*3/10)
 
-transform cheddar_face_right:
-    cheddar_size
-    xsize -(1500*2/10)
+transform lophii_face_left:
+    lophi_size
+    xsize -(1500*3/10)
 
 
 # Character definition for Player (Boo)
@@ -74,34 +95,32 @@ init -1 python:
     def boo_lip_flap(event, **kwargs):
         lip_flap("boo", event, **kwargs)
 
-
-
 image boo normal talking:
-    "boo normal"
-    pause 0.1
     "boo normal talk"
+    pause 0.1
+    "boo normal"
     pause 0.1
 
     repeat
 
 image boo happy talking:
-    "boo happy"
-    pause 0.1
     "boo happy talk"
+    pause 0.1
+    "boo happy"
     pause 0.1
 
     repeat
 
 image boo worried talking:
-    "boo worried"
-    pause 0.1
     "boo worried talk"
+    pause 0.1
+    "boo worried"
     pause 0.1
 
     repeat
 
 
-
+#def of character - in scripts/chapters do after 
 default player_name = "Boo"
 define b = Character("[player_name]", callback=boo_lip_flap, image="boo")
 
@@ -112,25 +131,25 @@ init -1 python:
         lip_flap("mummy", event, **kwargs)
 
 image mummy normal talking:
-    "mummy normal"
-    pause 0.1
     "mummy normal talk"
+    pause 0.1
+    "mummy normal"
     pause 0.1
 
     repeat
 
 image mummy happy talking:
-    "mummy happy"
-    pause 0.1
     "mummy happy talk"
+    pause 0.1
+    "mummy happy"
     pause 0.1
 
     repeat
 
-image mummy worried talking:
-    "mummy worried"
-    pause 0.1
+image mummy sad talking:
     "mummy worried talk"
+    pause 0.1
+    "mummy worried"
     pause 0.1
 
     repeat
@@ -144,25 +163,31 @@ init -1 python:
         lip_flap("tulip", event, **kwargs)
 
 image tulip normal talking:
-    "tulip normal"
-    pause 0.1
     "tulip normal talk"
+    
+    pause 0.1
+    "tulip normal"
+    
     pause 0.1
 
     repeat
 
 image tulip happy talking:
-    "tulip happy"
-    pause 0.1
     "tulip happy talk"
+    
+    pause 0.1
+    "tulip happy"
+    
     pause 0.1
 
     repeat
 
 image tulip worried talking:
-    "tulip worried"
-    pause 0.1
     "tulip worried talk"
+    
+    pause 0.1
+    "tulip worried"
+    
     pause 0.1
 
     repeat
@@ -175,29 +200,34 @@ init -1 python:
         lip_flap("daisy", event, **kwargs)
 
 image daisy normal talking:
-    "daisy normal"
-    pause 0.1
     "daisy normal talk"
+    
+    pause 0.1
+    "daisy normal"
+    
     pause 0.1
 
     repeat
 
 image daisy happy talking:
-    "daisy happy"
-    pause 0.1
     "daisy happy talk"
+    
+    pause 0.1
+    "daisy happy"
+    
     pause 0.1
 
     repeat
 
 image daisy worried talking:
-    "daisy worried"
-    pause 0.1
     "daisy worried talk"
+    
+    pause 0.1
+    "daisy worried"
+    
     pause 0.1
 
     repeat
-
 define dsy = Character("Daisy", callback=daisy_lip_flap, image="daisy")
 
 
@@ -206,18 +236,46 @@ init -1 python:
         lip_flap("cheddar", event, **kwargs)
 
 image cheddar normal talking:
-    "cheddar normal"
-    pause 0.1
     "cheddar normal talk"
+    
+    pause 0.1
+    "cheddar normal"
+    
+    pause 0.1
+
+    repeat
+define cdr = Character("Cheddar", callback=cheddar_lip_flap, image="cheddar")
+
+init -1 python:
+    def lupin_lip_flap(event, **kwargs):
+        lip_flap("lupin", event, **kwargs)
+
+image lupin normal talking:
+    "lupin normal talk"
+    
+    pause 0.1
+    "lupin normal"
+    
+    pause 0.1
+
+    repeat
+
+define lup = Character("Lupin", callback=lupin_lip_flap, image="lupin")
+
+init -1 python:
+    def lophii_lip_flap(event, **kwargs):
+        lip_flap("lophii", event, **kwargs)
+
+image lophii happy talking:
+    "lophii happy talk"
+    
+    pause 0.1
+    "lophii happy"
+    
     pause 0.1
 
     repeat
 
 
-define cdr = Character("Cheddar", callback=cheddar_lip_flap, image="cheddar")
+define lophii = Character("Lophii Morfs", callback=lophii_lip_flap, image="lophii")
 
-
-define lup = Character("Lupin", callback=cheddar_lip_flap, image="lupin")
-
-
-define mor = Character("Lophii Morfs", callback=cheddar_lip_flap, image="lophii")
