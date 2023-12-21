@@ -1,3 +1,7 @@
+define talked_to_lupin = "Lu"
+define talked_to_lophii = "Lo"
+default talked_to_at_table = ""
+
 label chapter_1:
     scene black with fade
     centered "{color=#fff}Chapter 1{/color}"
@@ -105,7 +109,7 @@ label chapter_1:
             voice "audio/Boo_1_11.mp3"
             b happy "Oh,{w=0.25} and my blog also just reached it’s first anniversary!"
             voice "audio/Tulip_1_7.mp3"             
-            tul happy "Yeah!{w=0.25}You should write about us after,{w=0.25} you busy bee!{w=0.25} I’m happy to see you buzzing with excitement over all the thing things you do."
+            tul happy "Yeah!{w=0.25} You should write about us after,{w=0.25} you busy bee!{w=0.25} I’m happy to see you buzzing with excitement over all the thing things you do."
             voice "audio/Tulip_1_8.mp3"
             tul "But take a break sometimes.{w=0.25} Who knows,{w=0.25} you might die twice because of stress!"
             voice "audio/Boo_1_12.mp3"
@@ -218,12 +222,15 @@ label chapter_1:
     
     #Make a tag: to have the game load here
     
-    "[player_name]" "{i}I guess I'll have to start making conversation.'{/i}"
+    "[player_name]" "{i}I guess I'll have to start making conversation.{/i}"
 
     menu:
-        "It's time to make conversation!'"
+        "It's time to make conversation!"
         
-        "Wolf Guy": #make tag here (Talk to Lupin)
+        "Wolf Guy":
+            # check the top of the chapter 1 file for definitions
+            $ talked_to_at_table = talked_to_lupin
+            
             "{i}You attempt to start a conversation but static fuzz fills your mind.{/i}"  
             "Tulip" "I love your cape. {w=0.25}What's the inspiration for your outfit?"
             "??" "Oh, {w=0.25} Uh- {w=0.25} Well, my theme is \"Shadow Tuxedos\" which is based on 80s anime and a famous opera."
@@ -241,14 +248,14 @@ label chapter_1:
             "Lupin" "Yeah. Thought I'd try it on for the night. How 'bout you? "
             menu:
                 "[player_name]" "it's uhhh.."
-                "Forgot"
+                "Forgot":
                     "[player_name]" "um- call me Boo!"
                     "[player_name]" "Call me Boo!"
                     "Lupin" "is that your name for the night?"
                     "[player_name]" "Nah, I just forgot my own name haha."
 
 
-                "Forgar"
+                "Forgar":
                     "[player_name]" "uh-"
                     "{i}Oh bother, seems like you don't know weather you changed your name for the night or not. '{/i}" 
                     "{i}You attempt to look for your tag but can't find it for the life of you'{/i}"  
@@ -267,7 +274,7 @@ label chapter_1:
             "[player_name]" "I call my outfit \“Clear Night\” which is based on a classical piece called \“Starlight Solitude\”." 
             "???" "What a lovely spin. You are a fan of music, then?"
             "[player_name]" "Yes, {w=0.25}I'm here to support my friends! They are performing!"
-            "???" "I see.I am a student of the arts myself. {w=0.25}The name's Lophii by the way"
+            "???" "I see. I am a student of the arts myself. {w=0.25}The name's Lophii by the way"
             "[player_name]" "Mine's Boo! So {w=0.25}who made your dress?"
             "Lophii" "I designed this dress myself to capture the beauty and feeling of the sea. I was born there and still think of it as home."
             "[player_name]" "Wow… {w=0.25}that is wonderful! I did an ocean cleanup once."
@@ -276,21 +283,38 @@ label chapter_1:
             "[player_name]" "{i}Oh no she's looking... {w=0.25} I should say something!{/i}"
             "[player_name]" "I uh!-" 
 
-    b "!!!" 
+    show boo normal at boo_size, boo_face_left, with dissolve:
+        pos (0.5, 1.0)
+        ease 0.2 pos (0.5, 0.75)
+        ease 0.2 pos (0.5, 1.0)
+
+    b "!!!"
     scene black with dissolve
     #Crowd applud Soud effect and have it go back to the 
     show bg daisy1 with fade
-    "[Daisy]" "We hope you enjoyed our first set!"
-    "[Daisy]" "We'll be back in 10 minutes."
+    "Daisy" "We hope you enjoyed our first set!"
+    "Daisy" "We'll be back in 10 minutes."
     #Walking sfx
     scene bg stairs_debug with fade
 
-    tul normal "Omg, You did SO good."
-    b "Yeah!!" 
 
-    #if spoke to Lupin 
-        #You take a glance at the sea monster and see a name tag
-        #Lupin 
+    show tulip normal at tulip_size, tulip_face_left:
+        pos (0.4, 1.0)
+    show boo normal at boo_size, boo_face_left:
+        pos (0.6, 1.0)
+    with dissolve
+    # this above dissolve is on a seperate line so they both fade in at the same time, instead of one after the other
+    
+    tul normal "Omg, You did SO good."
+    b happy "Yeah!!" 
+        
+    # this is how you show dialog only on certain conditions. you can also use boolean operators (and, or, etc.)
+    # and parenthesis to combine conditional operators
+    if talked_to_at_table == talked_to_lupin:
+        "{i}You take a glance at the sea monster and see a name tag{/i}"
+        "{i}'Lupin'{/i}"
+    
+         
     #if spoke to Lophii
         #you take a glace at the werewolf and see his name tag
 
@@ -316,13 +340,13 @@ label chapter_1:
     scene black with dissolve
 
     show bg daisy2 with fade
-    "[Daisy]" "And we’re back! I don't have a cool segway for this, but I think Kiwis are pretty nice! Don’t ya think?"
+    "Daisy" "And we’re back! I don't have a cool segway for this, but I think Kiwis are pretty nice! Don’t ya think?"
     
     scene black with dissolve
 #The crowd cheers sfx
     "The next song begins with the next song being called Kiwis"
     "You gain a slow realization that the entire set is based off the rainbow"
-    "Strawberry,Mango,Banana,Kiwi all correlate to the first four colors of the rainbow."
+    "Strawberry, Mango, Banana, Kiwi all correlate to the first four colors of the rainbow."
     "It was brilliant! {w=0.25}You begin to critically think about the next song... what could the names possibly be?"
     "You are lost deep in thought"
    
