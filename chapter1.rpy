@@ -265,7 +265,8 @@ label chapter_1:
                     "[player_name]" "Nah, I just forgot my own name haha." 
             "[player_name]" "{i}Wait- Did I just break some unspoken rule by asking his name??. Am I ruining the masqurade mystery??{/i}"
 
-        "Sea Monster": #make tag here (Talk to Lophii)
+        "Sea Monster":
+            $ talked_to_at_table = talked_to_lophii
             "{i}You attempt to start a conversation but static fuzz fills your mind.{/i}"  
             "{i}However- you overcome it.{/i}"  
             "[player_name]" "Hey- um! {w=0.25} I just wanted to say, that I love your outfit! " 
@@ -312,27 +313,27 @@ label chapter_1:
     # and parenthesis to combine conditional operators
     if talked_to_at_table == talked_to_lupin:
         "{i}You take a glance at the sea monster and see a name tag{/i}"
-        "{i}'Lupin'{/i}"
-    
+        "{i}'Lophii'{/i}"
+    if talked_to_at_table == talked_to_lophii:
+        "{i}You take a glace at the werewolf and see his name tag{/i}"
+        "{i}'Lupin'{/i}   
          
-    #if spoke to Lophii
-        #you take a glace at the werewolf and see his name tag
 
-    #show lophii happy at left, lophii_size with dissolve:
-    #    pos(0.3, 1.0)
-    #show lupin normal at left, lupin_size with dissolve:
-    #    pos(0.4, 1.0)
+    show lophii happy at left, lophii_size with dissolve:
+        pos(0.3, 1.0)
+    show lupin normal at left, lupin_size with dissolve:
+        pos(0.4, 1.0)
 
 
-    #lup normal "It's Really You! Daisy Bell in the Flesh! Hi {w=0.25}I am such a big fan of your work!! I still watch Sea Pirate Boogie (Anime Soundtrack 2000)"
-    #lup normal "Your work is absolutely phenomenal!"
-    #tul happy  "Oooo~ hello miss popular!"
-    #daisy normal "Haha It was nothing"
-    #lophii happy "I must say Miss Daisy, you''re incrediblly skilled a the violin. Which school did you attend?"
-    #lophii happy "Which school did you attened?"
-    #daisy normal "When I was alive? I got my bachlors at Yulevard School of Music but never got to finish my masters."
-    #lophii happy "Oh my stars...what an achievement"
-    #daisy normal "I gotta head back now, hope you guys enjoy the next set!""
+    lup normal "It's Really You! Daisy Bell in the Flesh! Hi {w=0.25}I am such a big fan of your work!! I still watch Sea Pirate Boogie (Anime Soundtrack 2000)"
+    lup normal "Your work is absolutely phenomenal!"
+    tul happy  "Oooo~ hello miss popular!"
+    daisy normal "Haha It was nothing"
+    lophii happy "I must say Miss Daisy, you''re incrediblly skilled a the violin. Which school did you attend?"
+    lophii happy "Which school did you attened?"
+    daisy normal "When I was alive? I got my bachlors at Yulevard School of Music but never got to finish my masters."
+    lophii happy "Oh my stars...what an achievement"
+    daisy normal "I gotta head back now, hope you guys enjoy the next set!""
     b "wooo!"
     tul happy "You go girl! YEAH!!"
     b "{i}Phew...{w=0.25}Saved by the bell...{/i}"
