@@ -2,6 +2,12 @@ define talked_to_lupin = "Lu"
 define talked_to_lophii = "Lo"
 default talked_to_at_table = ""
 
+define foodChoice_brew = "Brew"
+define foodChoice_cheddar = "Cheddar"
+define foodChoice_spider = "Spider"
+default foodChoice = ""
+
+
 label chapter_1:
     scene black with fade
     centered "{color=#fff}Chapter 1{/color}"
@@ -157,6 +163,8 @@ label chapter_1:
 
     menu:
         "Chef’s Recommendation":
+            $ foodChoice = foodChoice_brew 
+   
             voice "audio/Boo_1_16.mp3"
             b "Hmmm…{w=0.25} I don’t know what to choose exactly…{w=0.25} There’s just so many options!{w=0.25} Do you have a,{w=0.25} um…{w=0.25} favorite dish perhaps??"
             voice"audio/Cheddar_1_3.mp3"
@@ -168,6 +176,7 @@ label chapter_1:
 
 
         "Make something up":
+            $ foodChoice = foodChoice_cheddar 
             voice"audio/Boo_1_18.mp3"
 
             b "ummmm… {w=0.25}Can I get the…{w=0.25} Cheddar Goblin meal?"
@@ -188,6 +197,7 @@ label chapter_1:
 
 
         "Quickly glance at the menu":
+            $ foodChoice = foodChoice_spider 
             voice"audio/Boo_1_20.mp3"
             b "Lemme get the um-"
             
@@ -314,7 +324,7 @@ label chapter_1:
     if talked_to_at_table == talked_to_lupin:
         "{i}You take a glance at the sea monster and see a name tag{/i}"
         "{i}'Lophii'{/i}"
-    if talked_to_at_table == talked_to_lophii:
+    elif talked_to_at_table == talked_to_lophii:
         "{i}You take a glace at the werewolf and see his name tag{/i}"
         "{i}'Lupin'{/i}"
          
@@ -323,17 +333,19 @@ label chapter_1:
         pos(0.3, 1.0)
     show lupin normal at left, lupin_size with dissolve:
         pos(0.4, 1.0)
+ 
+    show daisy normal at center, daisy_size, daisy_face_left with dissolve: 
 
 
     lup normal "It's Really You! Daisy Bell in the Flesh! Hi {w=0.25}I am such a big fan of your work!! I still watch Sea Pirate Boogie (Anime Soundtrack 2000)"
     lup normal "Your work is absolutely phenomenal!"
     tul happy  "Oooo~ hello miss popular!"
-    daisy normal "Haha It was nothing"
+    dsy normal "Haha It was nothing"
     lophii happy "I must say Miss Daisy, you''re incrediblly skilled a the violin. Which school did you attend?"
     lophii happy "Which school did you attened?"
-    daisy normal "When I was alive? I got my bachlors at Yulevard School of Music but never got to finish my masters."
+    dsy normal "When I was alive? I got my bachlors at Yulevard School of Music but never got to finish my masters."
     lophii happy "Oh my stars...what an achievement"
-    daisy normal "I gotta head back now, hope you guys enjoy the next set!"
+    dsy normal "I gotta head back now, hope you guys enjoy the next set!"
     b "wooo!"
     tul happy "You go girl! YEAH!!"
     b "{i}Phew...{w=0.25}Saved by the bell...{/i}"
@@ -363,6 +375,21 @@ label chapter_1:
 
 
     show bg stairs2_debug with fade
+
+    scene black with dissolve
+
+
+    if foodChoice == foodChoice_brew:
+        "{i}Brew{/i}"
+        show bg brew with fade
+
+    elif foodChoice == foodChoice_cheddar:
+        "{i}cheddar{/i}"
+        show bg mac with fade
+
+    elif foodChoice == foodChoice_spider:
+        "{i}spider{/i}"
+        show bg pizza with fade
 
 
 #daisy talking
