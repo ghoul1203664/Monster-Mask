@@ -316,7 +316,7 @@ label chapter_1:
         "{i}'Lophii'{/i}"
     if talked_to_at_table == talked_to_lophii:
         "{i}You take a glace at the werewolf and see his name tag{/i}"
-        "{i}'Lupin'{/i}   
+        "{i}'Lupin'{/i}"
          
 
     show lophii happy at left, lophii_size with dissolve:
@@ -333,7 +333,7 @@ label chapter_1:
     lophii happy "Which school did you attened?"
     daisy normal "When I was alive? I got my bachlors at Yulevard School of Music but never got to finish my masters."
     lophii happy "Oh my stars...what an achievement"
-    daisy normal "I gotta head back now, hope you guys enjoy the next set!""
+    daisy normal "I gotta head back now, hope you guys enjoy the next set!"
     b "wooo!"
     tul happy "You go girl! YEAH!!"
     b "{i}Phew...{w=0.25}Saved by the bell...{/i}"
