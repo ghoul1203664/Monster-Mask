@@ -328,20 +328,38 @@ label chapter_1:
         "{i}You take a glace at the werewolf and see his name tag{/i}"
         "{i}'Lupin'{/i}"
          
-
     show lophii happy at left, lophii_size with dissolve:
-        pos(0.3, 1.0)
+        pos(0.25, 1.0)
+        #pos (x,y)
     show lupin normal at left, lupin_size with dissolve:
         pos(0.4, 1.0)
- 
-    show daisy normal at center, daisy_size, daisy_face_left with dissolve: 
+    
+    show tulip normal at right, tulip_size, with ease: 
+        pos(0.75, 1.0)
+
+    show daisy normal at center, daisy_size, with dissolve: 
 
 
     lup normal "It's Really You! Daisy Bell in the Flesh! Hi {w=0.25}I am such a big fan of your work!! I still watch Sea Pirate Boogie (Anime Soundtrack 2000)"
     lup normal "Your work is absolutely phenomenal!"
+ 
+    
+    
     tul happy  "Oooo~ hello miss popular!"
+    
+    show daisy normal:       
+        daisy_size
+        pause 0.5
+        daisy_face_left 
+
+
     dsy normal "Haha It was nothing"
-    lophii happy "I must say Miss Daisy, you''re incrediblly skilled a the violin. Which school did you attend?"
+
+    show daisy normal:      #right flip 
+        daisy_size
+        pause 0.5
+
+    lophii happy "I must say Miss Daisy, you're incrediblly skilled a the violin. Which school did you attend?"
     lophii happy "Which school did you attened?"
     dsy normal "When I was alive? I got my bachlors at Yulevard School of Music but never got to finish my masters."
     lophii happy "Oh my stars...what an achievement"

@@ -32,7 +32,6 @@ transform tulip_face_left:
 
 transform daisy_size:
     character_anchor
-
     xsize (1907*3/10)
     ysize (2900*3/10)
 
