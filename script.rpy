@@ -13,7 +13,6 @@ label intro:
 
     scene black with dissolve
     play music "audio/StarlightSolitude.mp3" loop
-
     
     #show cg one with dissolve
     #Note to self: Show ghosts and ghouls dancing in the city
@@ -62,7 +61,8 @@ label .city_walk:
     "{i}The map pieces fall out and scatter on the floor,{w=0.25} you pick up each piece and begin to solve the puzzle.{/i}"
     "{i}With careful effort,{w=0.25} you are able to re-construct the map to find the location of the party!{/i}"
 
-    # call screen scr_map_minigame
+    call screen scr_map_minigame
+
     voice "audio/Boo_0_3.mp3"
     b happy "Phew,That wasn't so bad!"
     
